@@ -13,15 +13,7 @@ struct HomeView: View {
             Text("Home")
                 .font(.largeTitle)
                 .bold()
-
-            HStack {
-                CategoryPanel()
-                CategoryPanel()
-            }
-            HStack {
-                CategoryPanel()
-                CategoryPanel()
-            }
+            CategoryView()
         }
     }
 }

@@ -8,34 +8,33 @@
 import SwiftUI
 
 struct CategoryPanel: View {
-    var categoryName: String = "Priority"
-    var numTasksInCategory: Int = 8
+    let name: String
+    let numTasks: Int
+    let color: Color
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(.red)
+                .fill(color)
                 .frame(
                     width: 150,
-                    height: 200,
-                    alignment: .center)
+                    height: 200)
                 .shadow(
                     color: .black,
                     radius: 10,
                     x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 10.0)
                 .padding(.all, 10)
             VStack {
-                Text(categoryName)
+                Text(name)
                     .font(.title)
                     .bold()
-                Text("\(numTasksInCategory) tasks")
-                    .font(.caption)
+                Text("\(numTasks) tasks")
+                    .font(.subheadline)
             }
-
         }
     }
 }
 
 #Preview {
-    CategoryPanel()
+    CategoryPanel(name:"Priority", numTasks: 8, color: .red)
 }
