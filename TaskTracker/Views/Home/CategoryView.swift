@@ -14,8 +14,8 @@ struct CategoryView: View {
 
             HStack (spacing: space) {
                 Spacer()
-                CategoryPanel(name: "Priority", numTasks: 8, color: .yellow, dimension: 150)
-                CategoryPanel(name: "Upcoming", numTasks: 13, color: .blue, dimension: 150)
+                CategoryPanel(name: "Priority", numTasks: 8, color: .saffron, dimension: 150)
+                CategoryPanel(name: "Upcoming", numTasks: 13, color: .electricBlue, dimension: 150)
                 Spacer()
             }
 
@@ -28,8 +28,8 @@ struct CategoryView: View {
 
             HStack (spacing: space) {
                 Spacer()
-                CategoryPanel(name: "Groups", numTasks: 9, color: .purple, dimension: 150)
-                CategoryPanel(name: "Overdue", numTasks: 3, color: .red, dimension: 150)
+                CategoryPanel(name: "Groups", numTasks: 9, color: .skyMagenta, dimension: 150)
+                CategoryPanel(name: "Overdue", numTasks: 3, color: .tomato, dimension: 150)
                 Spacer()
             }
         }

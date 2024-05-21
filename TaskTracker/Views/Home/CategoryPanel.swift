@@ -52,8 +52,8 @@ struct CategoryPanel: View {
                     height: dimension)
                 .shadow(
                     color: .black,
-                    radius: 11,
-                    x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 8.0)
+                    radius: 8,
+                    x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 4.0)
 
             // Body
             VStack (spacing: 0) {
