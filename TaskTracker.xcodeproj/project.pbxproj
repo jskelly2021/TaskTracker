@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		53100CE52BFD12BB0019A8F8 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53100CE42BFD12BB0019A8F8 /* CalendarView.swift */; };
 		53100CE82BFD17200019A8F8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53100CE72BFD17200019A8F8 /* SearchView.swift */; };
-		53100CEC2BFD1EB50019A8F8 /* HexPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53100CEB2BFD1EB50019A8F8 /* HexPanel.swift */; };
 		531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531759442BF3F8C400BED682 /* TaskTrackerApp.swift */; };
 		531759472BF3F8C400BED682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531759462BF3F8C400BED682 /* ContentView.swift */; };
 		531759492BF3F8C700BED682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531759482BF3F8C700BED682 /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		53100CE42BFD12BB0019A8F8 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		53100CE72BFD17200019A8F8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		53100CEB2BFD1EB50019A8F8 /* HexPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexPanel.swift; sourceTree = "<group>"; };
 		531759412BF3F8C400BED682 /* TaskTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		531759442BF3F8C400BED682 /* TaskTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerApp.swift; sourceTree = "<group>"; };
 		531759462BF3F8C400BED682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				531759462BF3F8C400BED682 /* ContentView.swift */,
 				53100CE12BFD0E5C0019A8F8 /* Home */,
 				53100CE32BFD12AE0019A8F8 /* Calendar */,
-				53100CEB2BFD1EB50019A8F8 /* HexPanel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 				53100CE82BFD17200019A8F8 /* SearchView.swift in Sources */,
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
-				53100CEC2BFD1EB50019A8F8 /* HexPanel.swift in Sources */,
 				53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
