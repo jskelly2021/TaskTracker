@@ -10,18 +10,26 @@ import SwiftUI
 struct Hexagon: Shape {
     func path(in rect: CGRect) -> Path {
         Path { path in
-            let hOffset: CGFloat = rect.width * 0.3
-            let vOffset: CGFloat = rect.height * 0.3
+            let hOffset: CGFloat = sqrt((rect.width / 2 * rect.width / 2) - (rect.width / 4 * rect.width / 4))
+            let vOffset: CGFloat = rect.height / 4
 
-            path.move(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
-            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.minY))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + vOffset))
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - vOffset))
-            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.maxY))
-            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.maxY))
-            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - vOffset))
-            path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + vOffset))
-            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
+//            path.move(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
+//            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.minY))
+//            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + vOffset))
+//            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - vOffset))
+//            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.maxY))
+//            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.maxY))
+//            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - vOffset))
+//            path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + vOffset))
+//            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
+            
+            path.move    (to: CGPoint(x: rect.midX,             y: rect.minY))
+            path.addLine (to: CGPoint(x: rect.midX + hOffset,   y: rect.minY + vOffset))
+            path.addLine (to: CGPoint(x: rect.midX + hOffset,   y: rect.maxY - vOffset))
+            path.addLine (to: CGPoint(x: rect.midX,             y: rect.maxY))
+            path.addLine (to: CGPoint(x: rect.midX - hOffset,   y: rect.maxY - vOffset))
+            path.addLine (to: CGPoint(x: rect.midX - hOffset,   y: rect.minY + vOffset))
+            path.addLine (to: CGPoint(x: rect.midX,             y: rect.minY))
         }
     }
 }
@@ -88,6 +96,6 @@ struct CategoryPanel: View {
 
 
 #Preview {
-    CategoryPanel(name: "Upcoming", numTasks: 8, color: .red, dimension: 150)
-//    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 75)
+//    CategoryPanel(name: "Upcoming", numTasks: 8, color: .red, dimension: 150)
+    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 200)
 }
