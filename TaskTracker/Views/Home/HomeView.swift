@@ -10,10 +10,12 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack {
+            Spacer()
             Text("Home")
                 .font(.largeTitle)
                 .bold()
             CategoryView()
+            Spacer()
         }
     }
 }
