@@ -43,6 +43,8 @@ struct CategoryPanel: View {
 
     var body: some View {
         ZStack {
+
+            // Background
             Hexagon()
                 .fill(color)
                 .frame(
@@ -52,29 +54,40 @@ struct CategoryPanel: View {
                     color: .black,
                     radius: 11,
                     x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 8.0)
-                .padding(.all, 10)
 
-            VStack {
+            // Body
+            VStack (spacing: 0) {
+
                 if let icon {
-                    Label("label", systemImage: "\(icon)")
-                        .labelStyle(.iconOnly)
-                        .font(.largeTitle)
+                    Image(systemName: "\(icon)")
+                        .resizable()
+                        .scaledToFit()
+                        .bold()
+                        .frame(width: dimension * 0.3)
                 }
 
                 Text(name)
-                    .minimumScaleFactor(0.4)
+                    .font(.system(size: 100))
+                    .minimumScaleFactor(0.1)
+                    .lineLimit(1)
+                    .padding([.leading, .trailing], 5)
                     .bold()
+                    .frame(width: dimension * 0.8)
 
                 if let numTasks {
                     Text("\(numTasks) tasks")
-                        .font(.subheadline)
+                        .font(.system(size: 100))
+                        .minimumScaleFactor(0.1)
+                        .lineLimit(1)
+                        .frame(width: dimension * 0.4)
                 }
             }
         }
     }
 }
 
+
 #Preview {
-    CategoryPanel(name: "Upcoming", numTasks: 8, color: .red)
-//    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray)
+    CategoryPanel(name: "Upcoming", numTasks: 8, color: .red, dimension: 150)
+//    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 75)
 }
