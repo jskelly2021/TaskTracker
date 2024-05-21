@@ -97,5 +97,5 @@ struct CategoryPanel: View {
 
 #Preview {
 //    CategoryPanel(name: "Upcoming", numTasks: 8, color: .red, dimension: 150)
-    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 200)
+    CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 100)
 }

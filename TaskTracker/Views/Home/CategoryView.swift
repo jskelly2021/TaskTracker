@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct CategoryView: View {
-    let space: CGFloat = 25
+    let dim: CGFloat = 150
     var body: some View {
-        VStack(spacing: -space) {
+        VStack(spacing: 0) {
 
-            HStack (spacing: space) {
+            HStack () {
                 Spacer()
-                CategoryPanel(name: "Priority", numTasks: 8, color: .saffron, dimension: 150)
-                CategoryPanel(name: "Upcoming", numTasks: 13, color: .electricBlue, dimension: 150)
+                CategoryPanel(name: "Priority", numTasks: 8, color: .saffron, dimension: dim)
+                CategoryPanel(name: "Upcoming", numTasks: 13, color: .electricBlue, dimension: dim)
                 Spacer()
             }
 
             HStack {
                 Spacer()
-                CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 75)
+                CategoryPanel(name: "Create", icon: "plus.circle", color: .gray, dimension: 100)
                 Spacer()
-
             }
 
-            HStack (spacing: space) {
+            HStack () {
                 Spacer()
-                CategoryPanel(name: "Groups", numTasks: 9, color: .skyMagenta, dimension: 150)
-                CategoryPanel(name: "Overdue", numTasks: 3, color: .tomato, dimension: 150)
+                CategoryPanel(name: "Groups", numTasks: 9, color: .skyMagenta, dimension: dim)
+                CategoryPanel(name: "Overdue", numTasks: 3, color: .tomato, dimension: dim)
                 Spacer()
             }
         }
