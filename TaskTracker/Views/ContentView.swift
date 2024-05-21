@@ -11,9 +11,17 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .tabItem { Label("Home", systemImage: "house") }
+                .tabItem { 
+                    Label("Home", systemImage: "house")
+                }
+            SearchView()
+                .tabItem { 
+                    Label("Search", systemImage: "magnifyingglass")
+                }
             CalendarView()
-                .tabItem { Label("Calendar", systemImage: "calendar") }
+                .tabItem { 
+                    Label("Calendar", systemImage: "calendar")
+                }
         }
     }
 }
