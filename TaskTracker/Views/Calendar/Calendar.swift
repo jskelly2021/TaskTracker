@@ -8,7 +8,17 @@
 import SwiftUI
 
 struct Calendar: View {
-    let days: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    let daysOfWeek: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+    let days: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
 
@@ -22,16 +32,23 @@ struct Calendar: View {
                 Spacer()
             }
             
-            // Days Text
+            // Days of Week
             HStack {
                 Spacer()
-                ForEach(days.indices, id: \.self) { day in
+                ForEach(daysOfWeek.indices, id: \.self) { day in
                     Spacer()
-                    Text(days[day])
+                    Text(daysOfWeek[day])
                     Spacer()
                 }
                 Spacer()
             }
+
+            // Days Grid            
+            LazyVGrid(columns: days, content: {
+                ForEach(1..<8) { index in
+                    Text("\(index)")
+                }
+            })
         }
     }
 }
