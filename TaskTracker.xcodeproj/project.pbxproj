@@ -17,7 +17,8 @@
 		53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBA2BF7DE47008443CB /* CategoryPanel.swift */; };
 		53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBC2BF7EE82008443CB /* CategoryView.swift */; };
 		53260A332C06281500F041AE /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A322C06281500F041AE /* Calendar.swift */; };
-		53260A352C0645A100F041AE /* ListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A342C0645A100F041AE /* ListVIew.swift */; };
+		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
+		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		53257EBA2BF7DE47008443CB /* CategoryPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPanel.swift; sourceTree = "<group>"; };
 		53257EBC2BF7EE82008443CB /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		53260A322C06281500F041AE /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		53260A342C0645A100F041AE /* ListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVIew.swift; sourceTree = "<group>"; };
+		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 			children = (
 				53100CE42BFD12BB0019A8F8 /* CalendarView.swift */,
 				53260A322C06281500F041AE /* Calendar.swift */,
-				53260A342C0645A100F041AE /* ListVIew.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -115,9 +116,19 @@
 				531759462BF3F8C400BED682 /* ContentView.swift */,
 				53100CE12BFD0E5C0019A8F8 /* Home */,
 				53100CE32BFD12AE0019A8F8 /* Calendar */,
+				53260A362C0647E000F041AE /* List */,
 				53100CE62BFD17120019A8F8 /* Search */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		53260A362C0647E000F041AE /* List */ = {
+			isa = PBXGroup;
+			children = (
+				53260A372C06481200F041AE /* ListItem.swift */,
+				53260A392C064F4500F041AE /* ListView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53260A382C06481200F041AE /* ListItem.swift in Sources */,
 				53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */,
+				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				53257EB92BF7DC94008443CB /* HomeView.swift in Sources */,
 				53100CE52BFD12BB0019A8F8 /* CalendarView.swift in Sources */,
 				53260A332C06281500F041AE /* Calendar.swift in Sources */,
@@ -198,7 +211,6 @@
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */,
-				53260A352C0645A100F041AE /* ListVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
