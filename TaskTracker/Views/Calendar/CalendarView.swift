@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @State var date: Date = Date()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Calendar")
+                .font(.largeTitle)
+                .bold()
+            
+            DatePicker("Select Month", selection: $date, displayedComponents: [.date])
+                .datePickerStyle(.graphical)
+
+            ListView(date: $date)
+        }
     }
 }
 
