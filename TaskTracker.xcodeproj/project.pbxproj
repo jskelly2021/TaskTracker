@@ -125,8 +125,8 @@
 		53260A362C0647E000F041AE /* List */ = {
 			isa = PBXGroup;
 			children = (
-				53260A372C06481200F041AE /* ListItem.swift */,
 				53260A392C064F4500F041AE /* ListView.swift */,
+				53260A372C06481200F041AE /* ListItem.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";

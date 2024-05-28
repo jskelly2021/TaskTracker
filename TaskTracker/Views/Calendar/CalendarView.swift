@@ -11,15 +11,16 @@ struct CalendarView: View {
     @State var date: Date = Date()
 
     var body: some View {
-        
-        Text("Calendar")
-            .font(.largeTitle)
-            .bold()
+        VStack {
+            Text("Calendar")
+                .font(.largeTitle)
+                .bold()
+            
+            DatePicker("Select Month", selection: $date, displayedComponents: [.date])
+                .datePickerStyle(.graphical)
 
-        DatePicker("Select Month", selection: $date, displayedComponents: [.date])
-            .datePickerStyle(.graphical)
-    
-        ListView()
+            ListView(date: $date)
+        }
     }
 }
 

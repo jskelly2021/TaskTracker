@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListView: View {
 
+    @Binding var date: Date
     @State var tasks: [task] = [
         TaskTracker.task(name: "Oil Change", details: "Full Synthetic Oil", status: "Bi-Monthly"),
         TaskTracker.task(name: "Hallway Air Filter", details: "25in x 20in", status: "Monthly"),
@@ -18,7 +19,7 @@ struct ListView: View {
     var body: some View {
 
         List {
-            Section(header: Text("Today")) {
+            Section(header: Text(date.formatted(date: .long, time: .omitted))) {
                 ForEach(tasks.indices, id: \.self) { index in
                     ListItem(item: tasks[index])
                 }
@@ -28,6 +29,7 @@ struct ListView: View {
     }
 }
 
-#Preview {
-    ListView()
-}
+//#Preview {
+//    @State var date: Date = Date.now
+//    ListView(date: $date)
+//}
