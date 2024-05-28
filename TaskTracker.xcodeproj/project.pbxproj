@@ -17,6 +17,7 @@
 		53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBA2BF7DE47008443CB /* CategoryPanel.swift */; };
 		53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBC2BF7EE82008443CB /* CategoryView.swift */; };
 		53260A332C06281500F041AE /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A322C06281500F041AE /* Calendar.swift */; };
+		53260A352C0645A100F041AE /* ListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A342C0645A100F041AE /* ListVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		53257EBA2BF7DE47008443CB /* CategoryPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPanel.swift; sourceTree = "<group>"; };
 		53257EBC2BF7EE82008443CB /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		53260A322C06281500F041AE /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		53260A342C0645A100F041AE /* ListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				53100CE42BFD12BB0019A8F8 /* CalendarView.swift */,
 				53260A322C06281500F041AE /* Calendar.swift */,
+				53260A342C0645A100F041AE /* ListVIew.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */,
+				53260A352C0645A100F041AE /* ListVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
