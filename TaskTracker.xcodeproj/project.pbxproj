@@ -19,6 +19,7 @@
 		53260A332C06281500F041AE /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A322C06281500F041AE /* Calendar.swift */; };
 		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
 		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
+		53C5A2D62C0664DD0068DE68 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5A2D52C0664DD0068DE68 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		53260A322C06281500F041AE /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		53C5A2D52C0664DD0068DE68 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				531759442BF3F8C400BED682 /* TaskTrackerApp.swift */,
 				53257EB72BF7DB87008443CB /* Views */,
+				53C5A2D42C0664BE0068DE68 /* Models */,
 				531759482BF3F8C700BED682 /* Assets.xcassets */,
 				5317594A2BF3F8C700BED682 /* Preview Content */,
 			);
@@ -129,6 +132,14 @@
 				53260A372C06481200F041AE /* ListItem.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		53C5A2D42C0664BE0068DE68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53C5A2D52C0664DD0068DE68 /* TaskModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */,
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				53257EB92BF7DC94008443CB /* HomeView.swift in Sources */,
+				53C5A2D62C0664DD0068DE68 /* TaskModel.swift in Sources */,
 				53100CE52BFD12BB0019A8F8 /* CalendarView.swift in Sources */,
 				53260A332C06281500F041AE /* Calendar.swift in Sources */,
 				53100CE82BFD17200019A8F8 /* SearchView.swift in Sources */,

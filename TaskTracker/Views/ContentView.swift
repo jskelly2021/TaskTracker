@@ -11,15 +11,15 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .tabItem { 
+                .tabItem {
                     Label("Home", systemImage: "house")
                 }
             SearchView()
-                .tabItem { 
+                .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
             CalendarView()
-                .tabItem { 
+                .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
         }
