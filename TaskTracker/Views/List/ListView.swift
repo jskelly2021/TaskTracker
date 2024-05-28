@@ -28,8 +28,3 @@ struct ListView: View {
         .listStyle(.plain)
     }
 }
-
-//#Preview {
-//    @State var date: Date = Date.now
-//    ListView(date: $date)
-//}
