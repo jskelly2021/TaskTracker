@@ -9,22 +9,26 @@ import SwiftUI
 
 struct ListView: View {
 
-    @Binding var date: Date
-    @State var tasks: [task] = [
-        TaskTracker.task(name: "Oil Change", details: "Full Synthetic Oil", status: "Bi-Monthly"),
-        TaskTracker.task(name: "Hallway Air Filter", details: "25in x 20in", status: "Monthly"),
-        TaskTracker.task(name: "Credit Card Payment", details: "Capital One Card", status: "Monthly")
-    ]
+//    @Binding var date: Date
+     var date: Date = Date()
+
     
+    @EnvironmentObject var taskModel: TaskModel
+
     var body: some View {
 
         List {
             Section(header: Text(date.formatted(date: .long, time: .omitted))) {
-                ForEach(tasks.indices, id: \.self) { index in
-                    ListItem(item: tasks[index])
+                ForEach(taskModel.tasks.indices, id: \.self) { index in
+                    ListItem(item: taskModel.tasks[index])
                 }
             }
         }
         .listStyle(.plain)
     }
+}
+
+#Preview {
+    ListView()
+        .environmentObject(TaskModel())
 }

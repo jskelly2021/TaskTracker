@@ -7,15 +7,9 @@
 
 import SwiftUI
 
-struct task {
-    let name: String
-    let details: String
-    let status: String
-}
-
 struct ListItem: View {
     
-    let item: task
+    let item: Task
     
     var body: some View {
 
@@ -35,5 +29,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: TaskTracker.task(name: "Oil Change", details: "Full Synthetic Oil", status: "Monthly"))
+    ListItem(item: Task(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: Date.init(), group: "Indoor", priority: false))
 }
