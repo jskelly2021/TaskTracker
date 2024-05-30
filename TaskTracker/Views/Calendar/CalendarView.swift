@@ -19,11 +19,12 @@ struct CalendarView: View {
             DatePicker("Select Month", selection: $date, displayedComponents: [.date])
                 .datePickerStyle(.graphical)
 
-//            ListView(date: $date)
+            ListView(date: $date)
         }
     }
 }
 
 #Preview {
     CalendarView()
+        .environmentObject(TaskModel())
 }

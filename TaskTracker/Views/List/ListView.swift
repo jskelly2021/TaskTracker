@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ListView: View {
 
-//    @Binding var date: Date
-     var date: Date = Date()
+    @Binding var date: Date
+
+//     var date: Date = Date()
 
     
     @EnvironmentObject var taskModel: TaskModel
@@ -20,7 +21,10 @@ struct ListView: View {
         List {
             Section(header: Text(date.formatted(date: .long, time: .omitted))) {
                 ForEach(taskModel.tasks.indices, id: \.self) { index in
-                    ListItem(item: taskModel.tasks[index])
+
+                    if Calendar.current.dateComponents([.day, .month, .year], from: taskModel.tasks[index].deadline) == Calendar.current.dateComponents([.day, .month, .year], from: date) {
+                        ListItem(item: taskModel.tasks[index])
+                    }
                 }
             }
         }
@@ -28,7 +32,7 @@ struct ListView: View {
     }
 }
 
-#Preview {
-    ListView()
-        .environmentObject(TaskModel())
-}
+//#Preview {
+//    ListView()
+//        .environmentObject(TaskModel())
+//}
