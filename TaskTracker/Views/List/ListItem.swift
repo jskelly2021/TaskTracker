@@ -11,17 +11,6 @@ struct ListItem: View {
     
     let item: Task
 
-    let date1 = Calendar.current.date(
-            from: DateComponents(
-            calendar: Calendar.current,
-            year: 2024,
-            month: 5,
-            day: 31)
-        ) ?? Date()
-
-
-    var date2: Date = Date()
-
     var body: some View {
 
         HStack {
@@ -36,22 +25,6 @@ struct ListItem: View {
                 .lineLimit(2)
             Spacer()
         }
-        
-//        VStack {
-//            Text("Date 1: \(date1)")
-//            Text("Date 2: \(date2)")
-//            
-//            let c1 = Calendar.current.dateComponents([.day, .month, .year], from: date1)
-//            let c2 = Calendar.current.dateComponents([.day, .month, .year], from: date2)
-//
-//            if (c1 == c2) {
-//                Text("True")
-//            }
-//            else {
-//                Text("False")
-//            }
-//            
-//        }
     }
 }
 

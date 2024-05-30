@@ -10,19 +10,20 @@ import SwiftUI
 struct ListView: View {
 
     @Binding var date: Date
-
 //     var date: Date = Date()
 
-    
     @EnvironmentObject var taskModel: TaskModel
 
     var body: some View {
 
         List {
             Section(header: Text(date.formatted(date: .long, time: .omitted))) {
-                ForEach(taskModel.tasks.indices, id: \.self) { index in
+                let currentDateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
 
-                    if Calendar.current.dateComponents([.day, .month, .year], from: taskModel.tasks[index].deadline) == Calendar.current.dateComponents([.day, .month, .year], from: date) {
+                ForEach(taskModel.tasks.indices, id: \.self) { index in
+                    let deadlineComponents: DateComponents = Calendar.current.dateComponents([.day, .month, .year], from: taskModel.tasks[index].deadline)
+
+                    if deadlineComponents == currentDateComponents {
                         ListItem(item: taskModel.tasks[index])
                     }
                 }
