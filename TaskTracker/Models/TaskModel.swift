@@ -7,15 +7,6 @@
 
 import Foundation
 
-struct Task {
-    var name: String
-    var status: String
-    var details: String
-    var deadline: Date
-    var group: String
-    var priority: Bool
-}
-
 class TaskModel : ObservableObject {
     let now: Date = Date.init()
     

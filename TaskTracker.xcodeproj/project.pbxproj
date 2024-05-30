@@ -19,6 +19,7 @@
 		53260A332C06281500F041AE /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A322C06281500F041AE /* Calendar.swift */; };
 		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
 		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
+		538A3C092C0903D70026025F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A3C082C0903D70026025F /* Task.swift */; };
 		53C5A2D62C0664DD0068DE68 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5A2D52C0664DD0068DE68 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		53260A322C06281500F041AE /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		538A3C082C0903D70026025F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		53C5A2D52C0664DD0068DE68 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				53C5A2D52C0664DD0068DE68 /* TaskModel.swift */,
+				538A3C082C0903D70026025F /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */,
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				53257EB92BF7DC94008443CB /* HomeView.swift in Sources */,
+				538A3C092C0903D70026025F /* Task.swift in Sources */,
 				53C5A2D62C0664DD0068DE68 /* TaskModel.swift in Sources */,
 				53100CE52BFD12BB0019A8F8 /* CalendarView.swift in Sources */,
 				53260A332C06281500F041AE /* Calendar.swift in Sources */,
