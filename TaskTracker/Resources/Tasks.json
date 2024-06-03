@@ -7,7 +7,6 @@
         "group" : "Automotive",
         "priority" : false
     },
-
     {
         "name" : "Oil Change",
         "status" : "Tri Monthly",
@@ -16,7 +15,6 @@
         "group" : "Automotive",
         "priority" : false
     },
-
     {
         "name" : "Oil Change",
         "status" : "Tri Monthly",

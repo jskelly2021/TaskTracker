@@ -11,7 +11,7 @@ struct Task : Codable {
     var name: String
     var status: String
     var details: String
-    var deadline: Date
+    var deadline: String
     var group: String
     var priority: Bool
 }

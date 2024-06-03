@@ -29,5 +29,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: Task(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: Date.init(), group: "Indoor", priority: false))
+    ListItem(item: Task(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: "", group: "Indoor", priority: false))
 }
