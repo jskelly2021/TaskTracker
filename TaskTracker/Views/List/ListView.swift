@@ -33,5 +33,5 @@ struct ListView: View {
 
 #Preview {
     ListView()
-        .environmentObject(TaskModel())
+        .environmentObject(JobStorage())
 }

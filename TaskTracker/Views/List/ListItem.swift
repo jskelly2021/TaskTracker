@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListItem: View {
     
-    let item: Task
+    let item: Job
 
     var body: some View {
 
@@ -29,5 +29,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: Task(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: "", group: "Indoor", priority: false))
+    ListItem(item: Job(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: "", group: "Indoor", priority: false))
 }

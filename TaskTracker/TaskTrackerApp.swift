@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct TaskTrackerApp: App {
-    @StateObject var taskModel: TaskModel = TaskModel()
+    @StateObject var jobStore: JobStorage = JobStorage()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-            .environmentObject(taskModel)
+            .environmentObject(jobStore)
     }
 }
