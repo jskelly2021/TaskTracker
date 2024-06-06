@@ -13,6 +13,7 @@ class JobStorage : ObservableObject {
     init() {
         do {
             try loadJobs(filename: "jobs.data")
+            print(jobs[0].deadline)
         }
         catch {
             print("Error loading Jobs \(error)")
@@ -36,7 +37,10 @@ class JobStorage : ObservableObject {
         }
 
         do {
-            jobs = try JSONDecoder().decode([Job].self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(JobDateFormat())
+
+            jobs = try decoder.decode([Job].self, from: data)
         } catch {
             print("Couldn't parse \(filename) as \(Job.self):\n\(error)")
         }

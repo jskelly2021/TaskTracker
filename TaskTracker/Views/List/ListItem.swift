@@ -29,5 +29,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: Job(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: "", group: "Indoor", priority: false))
+    ListItem(item: Job(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: Date(), group: "Indoor", priority: false))
 }
