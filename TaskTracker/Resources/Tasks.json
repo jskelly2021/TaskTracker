@@ -3,7 +3,7 @@
         "name" : "Oil Change",
         "status" : "Tri Monthly",
         "details" : "Full Synthetic",
-        "deadline" : "TODO"
+        "deadline" : "TODO",
         "group" : "Automotive",
         "priority" : false
     },
@@ -11,7 +11,7 @@
         "name" : "Oil Change",
         "status" : "Tri Monthly",
         "details" : "Full Synthetic",
-        "deadline" : "TODO"
+        "deadline" : "TODO",
         "group" : "Automotive",
         "priority" : false
     },
@@ -19,7 +19,7 @@
         "name" : "Oil Change",
         "status" : "Tri Monthly",
         "details" : "Full Synthetic",
-        "deadline" : "TODO"
+        "deadline" : "TODO",
         "group" : "Automotive",
         "priority" : false
     }

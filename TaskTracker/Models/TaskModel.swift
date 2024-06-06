@@ -7,46 +7,26 @@
 
 import Foundation
 
-class TaskModel : ObservableObject {
-    let now: Date = Date.init()
-    
-    let date1 = Calendar.current.date(
-            from: DateComponents(
-                calendar: Calendar.current,
-                year: 2024,
-                month: 5,
-                day: 31)
-        ) ?? Date()
-    
-    let date2 = Calendar.current.date(
-            from: DateComponents(
-                calendar: Calendar.current,
-                year: 2024,
-                month: 5,
-                day: 28)
-        ) ?? Date()
+enum LoadError: Error {
+    case BundleError
+    case LoadingError
+    case DecorderError
+}
 
-
-    @Published var tasks: [Task] = []
- 
-    init() {
-        loadTasks()
-    }
-
-    func loadTasks()
+let jsonString = 
+"""
     {
-//        let task1 = Task(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: date1, group: "Indoor", priority: false)
-//        let task2 = Task(name: "Upstairs Air Vent", status: "Monthly", details: "20x25", deadline: now, group: "Indoor", priority: false)
-//        let task3 = Task(name: "Downstairs Air Vent", status: "Monthly", details: "20x25", deadline: now, group: "Indoor", priority: false)
-//        let task4 = Task(name: "Card Payment", status: "Monthly", details: "CapitalOne", deadline: date2, group: "Finance", priority: true)
-
-//        tasks.append(task1)
-//        tasks.append(task2)
-//        tasks.append(task3)
-//        tasks.append(task4)
-
-        
+        "name" : "Oil Change",
+        "status" : "Tri Monthly",
+        "details" : "Full Synthetic",
+        "deadline" : "TODO",
+        "group" : "Automotive",
+        "priority" : false
     }
+"""
+
+class TaskModel : ObservableObject {
+    var tasks: [Task] = loadTasks(jsonFile: "tasks.json")
 
     func addTask(task: Task) {
         
@@ -56,4 +36,59 @@ class TaskModel : ObservableObject {
 
     }
 
+}
+
+
+func loadTasks<T: Decodable>(jsonFile: String) -> T
+{
+//    let decoder = JSONDecoder()
+//
+//    do {
+//        guard let fileURL = Bundle.main.url(forResource: jsonFile, withExtension: nil)
+//        else {
+//            throw LoadError.BundleError
+//        }
+//
+////        guard let data = try? Data(contentsOf: fileURL)
+////        else {
+////            throw LoadError.LoadingError
+////        }
+//        
+//        let data = jsonString.data(using: .utf8)!
+//
+//        return try decoder.decode(T.self, from: data)
+//    }
+//    catch LoadError.BundleError {
+//        print("Couldn't find file in Bundle")
+//    }
+//    catch LoadError.LoadingError {
+//        print("Couldn't load data from file")
+//    }
+//    catch LoadError.DecorderError {
+//        print("Couldn't decode JSON")
+//    }
+//    catch {
+//        print("error loading")
+//    }
+
+//    guard let file = Bundle.main.url(forResource: jsonFile, withExtension: nil)
+//    else {
+//        fatalError("Couldn't find \(jsonFile) in main bundle.")
+//    }
+
+//    do {
+//        data = try Data(contentsOf: file)
+//    } catch {
+//        fatalError("Couldn't load \(jsonFile) from main bundle:\n\(error)")
+//    }
+
+    
+    let data = jsonString.data(using: .utf8)!
+    
+    do {
+        return try JSONDecoder().decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(jsonFile) as \(T.self):\n\(error)")
+    }
+    
 }
