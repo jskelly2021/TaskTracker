@@ -25,9 +25,17 @@ let jsonString =
     }
 """
 
-class TaskModel : ObservableObject {
-    var tasks: [Task] = loadTasks(jsonFile: "tasks.json")
+class TaskStorage : ObservableObject {
+    @Published var tasks: [Task] = []
 
+    private static func getFileURL() throws -> URL {
+        try FileManager.default.url(for: .documentDirectory,
+                                    in: .userDomainMask,
+                                    appropriateFor: nil,
+                                    create: false)
+        .appendingPathExtension("tasks.JSON")
+    }
+    
     func addTask(task: Task) {
         
     }
@@ -82,13 +90,5 @@ func loadTasks<T: Decodable>(jsonFile: String) -> T
 //        fatalError("Couldn't load \(jsonFile) from main bundle:\n\(error)")
 //    }
 
-    
-    let data = jsonString.data(using: .utf8)!
-    
-    do {
-        return try JSONDecoder().decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(jsonFile) as \(T.self):\n\(error)")
-    }
     
 }
