@@ -16,7 +16,7 @@ struct ListItem: View {
         HStack {
             Spacer()
             Text(item.name)
-                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .lineLimit(2)
             Spacer()
             Text(item.status)
                 .lineLimit(1)

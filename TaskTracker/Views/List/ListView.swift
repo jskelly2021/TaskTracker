@@ -10,24 +10,22 @@ import SwiftUI
 struct ListView: View {
 
 //    @Binding var date: Date
-//     var date: Date = Date()
+     var date: Date = Date()
 
-//    @EnvironmentObject var taskModel: TaskModel
+    @EnvironmentObject var jobStore: JobStorage
 
     var body: some View {
 
-//        List {
-//            Section(header: Text(date.formatted(date: .long, time: .omitted))) {
-//                let currentDateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
-//
-//                ForEach(taskModel.tasks.indices, id: \.self) { index in
-//                        ListItem(item: taskModel.tasks[index])
-//                }
-//            }
-//        }
-//        .listStyle(.plain)
-        
-        Text("Working")
+        List {
+            Section(header: Text(date.formatted(date: .long, time: .omitted))) {
+
+                ForEach(jobStore.jobs.indices, id: \.self) { index in
+                        ListItem(item: jobStore.jobs[index])
+                }
+            }
+        }
+        .listStyle(.plain)
+
     }
 }
 

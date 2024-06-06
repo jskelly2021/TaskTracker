@@ -8,17 +8,17 @@
         "priority" : false
     },
     {
-        "name" : "Oil Change",
-        "status" : "Tri Monthly",
-        "details" : "Full Synthetic",
+        "name" : "Air Vent",
+        "status" : "Monthly",
+        "details" : "25x20 in",
         "deadline" : "TODO",
         "group" : "Automotive",
         "priority" : false
     },
     {
-        "name" : "Oil Change",
-        "status" : "Tri Monthly",
-        "details" : "Full Synthetic",
+        "name" : "Card Payment",
+        "status" : "Monthly",
+        "details" : "Capitol One",
         "deadline" : "TODO",
         "group" : "Automotive",
         "priority" : false

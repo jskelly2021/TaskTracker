@@ -7,51 +7,42 @@
 
 import Foundation
 
-enum LoadError: Error {
-    case BundleError
-    case LoadingError
-    case DecorderError
-}
-
-let jsonString = 
-"""
-    {
-        "name" : "Oil Change",
-        "status" : "Tri Monthly",
-        "details" : "Full Synthetic",
-        "deadline" : "TODO",
-        "group" : "Automotive",
-        "priority" : false
-    }
-"""
-
 class JobStorage : ObservableObject {
     @Published var jobs: [Job] = []
-
-    private static func getFileURL() throws -> URL {
-        try FileManager.default.url(for: .documentDirectory,
-                                    in: .userDomainMask,
-                                    appropriateFor: nil,
-                                    create: false)
-        .appendingPathExtension("tasks.JSON")
+    
+    init() {
+        do {
+            try loadJobs(filename: "jobs.data")
+        }
+        catch {
+            print("Error loading Jobs \(error)")
+        }
     }
 
-    func loadJobs() throws {
-        let fileURL = try Self.getFileURL()
+    func loadJobs(filename: String) throws {
+        let data: Data
 
-        guard let data = try? Data(contentsOf: fileURL)
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
         else {
-            jobs = []
+            print("Couldn't find \(filename) in main bundle.")
+            return
+        }
+        
+        do {
+            data = try Data(contentsOf: file)
+        } catch {
+            print("Couldn't load \(filename) from main bundle:\n\(error)")
             return
         }
 
-        self.jobs = try JSONDecoder().decode([Job].self, from: data)
+        do {
+            jobs = try JSONDecoder().decode([Job].self, from: data)
+        } catch {
+            print("Couldn't parse \(filename) as \(Job.self):\n\(error)")
+        }
     }
-    
+
     func saveJobs(jobs: [Job] ) throws {
-        let data = JSONEncoder().encode(jobs)
-        let fileURL = try Self.getFileURL()
-        
-        try data.write(to: fileURL)
+
     }
 }
