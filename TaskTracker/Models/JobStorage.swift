@@ -26,7 +26,7 @@ let jsonString =
 """
 
 class JobStorage : ObservableObject {
-    @Published var tasks: [Job] = []
+    @Published var jobs: [Job] = []
 
     private static func getFileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
@@ -38,47 +38,13 @@ class JobStorage : ObservableObject {
 
     func loadTasks() throws {
         let fileURL = try Self.getFileURL()
-
         
-    //    let decoder = JSONDecoder()
-    //
-    //    do {
-    //        guard let fileURL = Bundle.main.url(forResource: jsonFile, withExtension: nil)
-    //        else {
-    //            throw LoadError.BundleError
-    //        }
-    //
-    //        guard let data = try? Data(contentsOf: fileURL)
-    //        else {
-    //            throw LoadError.LoadingError
-    //        }
-    //
-    //        let data = jsonString.data(using: .utf8)!
-    //
-    //        return try decoder.decode(T.self, from: data)
-    //    }
-    //    catch LoadError.BundleError {
-    //        print("Couldn't find file in Bundle")
-    //    }
-    //    catch LoadError.LoadingError {
-    //        print("Couldn't load data from file")
-    //    }
-    //    catch LoadError.DecorderError {
-    //        print("Couldn't decode JSON")
-    //    }
-    //    catch {
-    //        print("error loading")
-    //    }
+        guard let data = try? Data(contentsOf: fileURL)
+        else {
+            jobs = []
+            return
+        }
 
-    //    guard let file = Bundle.main.url(forResource: jsonFile, withExtension: nil)
-    //    else {
-    //        fatalError("Couldn't find \(jsonFile) in main bundle.")
-    //    }
-
-    //    do {
-    //        data = try Data(contentsOf: file)
-    //    } catch {
-    //        fatalError("Couldn't load \(jsonFile) from main bundle:\n\(error)")
-    //    }
+        self.jobs = try JSONDecoder().decode([Job].self, from: data)
     }
 }
