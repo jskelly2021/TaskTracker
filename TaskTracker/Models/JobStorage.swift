@@ -36,9 +36,9 @@ class JobStorage : ObservableObject {
         .appendingPathExtension("tasks.JSON")
     }
 
-    func loadTasks() throws {
+    func loadJobs() throws {
         let fileURL = try Self.getFileURL()
-        
+
         guard let data = try? Data(contentsOf: fileURL)
         else {
             jobs = []
@@ -46,5 +46,12 @@ class JobStorage : ObservableObject {
         }
 
         self.jobs = try JSONDecoder().decode([Job].self, from: data)
+    }
+    
+    func saveJobs(jobs: [Job] ) throws {
+        let data = JSONEncoder().encode(jobs)
+        let fileURL = try Self.getFileURL()
+        
+        try data.write(to: fileURL)
     }
 }
