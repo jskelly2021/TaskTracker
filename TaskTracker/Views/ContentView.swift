@@ -14,13 +14,9 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            SearchView()
+            ListView()
                 .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            CalendarView()
-                .tabItem {
-                    Label("Calendar", systemImage: "calendar")
+                    Label("List", systemImage: "list.bullet")
                 }
         }
     }

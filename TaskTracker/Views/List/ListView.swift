@@ -8,28 +8,19 @@
 import SwiftUI
 
 struct ListView: View {
-
-    @Binding var date: Date
-
     @EnvironmentObject var jobStore: JobStorage
 
+    let testItem: Job = Job(name: "Oil Change", status: "Monthly", details: "Full Synthetic", deadline: Date(), group: "Indoor", priority: false)
+    
     var body: some View {
         List {
-            Section(header: Text(date.formatted(date: .long, time: .omitted))) {                
-                ForEach(jobStore.jobs.indices, id: \.self) { index in
-                    if (jobStore.jobs[index].deadline == date) {
-                        ListItem(item: jobStore.jobs[index])
-                    }
-                }
-            }
+            ListItem(item: testItem)
         }
         .listStyle(.plain)
     }
 }
 
 #Preview {
-    @State var testDate: Date = Date()
-    
-    return ListView(date: $testDate)
+    ListView()
         .environmentObject(JobStorage())
 }

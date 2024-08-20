@@ -3,7 +3,7 @@
         "name" : "Oil Change",
         "status" : "Tri Monthly",
         "details" : "Full Synthetic",
-        "deadline" : "6.6.2024",
+        "deadline" : "8.6.2024",
         "group" : "Automotive",
         "priority" : false
     },
@@ -11,7 +11,7 @@
         "name" : "Air Vent",
         "status" : "Monthly",
         "details" : "25x20 in",
-        "deadline" : "6.6.2024",
+        "deadline" : "8.6.2024",
         "group" : "Automotive",
         "priority" : false
     },
@@ -19,7 +19,7 @@
         "name" : "Card Payment",
         "status" : "Monthly",
         "details" : "Capitol One",
-        "deadline" : "7.6.2024",
+        "deadline" : "8.7.2024",
         "group" : "Automotive",
         "priority" : false
     }

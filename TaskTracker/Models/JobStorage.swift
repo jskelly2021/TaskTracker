@@ -9,11 +9,10 @@ import Foundation
 
 class JobStorage : ObservableObject {
     @Published var jobs: [Job] = []
-    
+
     init() {
         do {
             try loadJobs(filename: "jobs.data")
-            print(jobs[0].deadline)
         }
         catch {
             print("Error loading Jobs \(error)")
@@ -28,7 +27,7 @@ class JobStorage : ObservableObject {
             print("Couldn't find \(filename) in main bundle.")
             return
         }
-        
+
         do {
             data = try Data(contentsOf: file)
         } catch {
