@@ -45,7 +45,7 @@ class JobStorage : ObservableObject {
         }
     }
 
-    func saveJobs(jobs: [Job] ) throws {
+    func saveJobs() throws {
 
     }
 }

@@ -10,11 +10,12 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var jobStore: JobStorage
 
-    let testItem: Job = Job(name: "Oil Change", status: "Monthly", details: "Full Synthetic", deadline: Date(), group: "Indoor", priority: false)
-    
     var body: some View {
+
         List {
-            ListItem(item: testItem)
+            Text(jobStore.jobs[0].name)
+            Text(jobStore.jobs[1].name)
+            Text(jobStore.jobs[2].name)
         }
         .listStyle(.plain)
     }
