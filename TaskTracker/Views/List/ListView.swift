@@ -13,9 +13,9 @@ struct ListView: View {
     var body: some View {
 
         List {
-            Text(jobStore.jobs[0].name)
-            Text(jobStore.jobs[1].name)
-            Text(jobStore.jobs[2].name)
+            ForEach(jobStore.jobs, id: \.name) { Job in
+                Text(Job.name)
+            }
         }
         .listStyle(.plain)
     }
