@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListItem: View {
-    
+
     let item: Job
 
     var body: some View {
