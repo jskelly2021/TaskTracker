@@ -11,16 +11,12 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .tabItem { 
+                .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            SearchView()
-                .tabItem { 
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            CalendarView()
-                .tabItem { 
-                    Label("Calendar", systemImage: "calendar")
+            ListView()
+                .tabItem {
+                    Label("List", systemImage: "list.bullet")
                 }
         }
     }
@@ -28,4 +24,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(JobStorage())
 }

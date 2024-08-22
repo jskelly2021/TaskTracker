@@ -7,22 +7,16 @@
 
 import SwiftUI
 
-struct task {
-    let name: String
-    let details: String
-    let status: String
-}
-
 struct ListItem: View {
-    
-    let item: task
-    
+
+    let item: Job
+
     var body: some View {
 
         HStack {
             Spacer()
             Text(item.name)
-                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .lineLimit(2)
             Spacer()
             Text(item.status)
                 .lineLimit(1)
@@ -35,5 +29,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: TaskTracker.task(name: "Oil Change", details: "Full Synthetic Oil", status: "Monthly"))
+    ListItem(item: Job(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: Date(), group: "Indoor", priority: false))
 }
