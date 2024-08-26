@@ -9,11 +9,9 @@ import Foundation
 
 struct Job : Codable {
     var name: String
-    var status: String
+    var status: Bool // false - incomplete : true - complete
     var details: String
     var deadline: Date
-    var group: String
-    var priority: Bool
 }
 
 func JobDateFormat() -> DateFormatter {

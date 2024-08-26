@@ -18,8 +18,14 @@ struct ListItem: View {
             Text(item.name)
                 .lineLimit(2)
             Spacer()
-            Text(item.status)
-                .lineLimit(1)
+            if item.status {
+                Text("Complete")
+                    .lineLimit(1)
+            }
+            else {
+                Text("Incomplete")
+                    .lineLimit(1)
+            }
             Spacer()
             Text("Details: \(item.details)")
                 .lineLimit(2)
@@ -29,5 +35,5 @@ struct ListItem: View {
 }
 
 #Preview {
-    ListItem(item: Job(name: "Oil", status: "Monthly", details: "Full Synthetic", deadline: Date(), group: "Indoor", priority: false))
+    ListItem(item: Job(name: "Oil", status: false, details: "Full Synthetic", deadline: Date()))
 }
