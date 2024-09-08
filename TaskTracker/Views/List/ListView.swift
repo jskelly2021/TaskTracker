@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var jobStore: JobStorage
-
     var body: some View {
-
-        List {
-            ForEach(jobStore.jobs, id: \.name) { Job in
-                ListItem(item: Job)
-            }
-        }
-        .listStyle(.plain)
+        Text("List View")
     }
 }
 
 #Preview {
     ListView()
-        .environmentObject(JobStorage())
 }
