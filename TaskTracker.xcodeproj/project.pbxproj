@@ -16,9 +16,10 @@
 		53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBC2BF7EE82008443CB /* CategoryView.swift */; };
 		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
 		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
-		538A3C092C0903D70026025F /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A3C082C0903D70026025F /* Job.swift */; };
-		53C5A2D62C0664DD0068DE68 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5A2D52C0664DD0068DE68 /* JobStorage.swift */; };
-		53DF3EF12C0E585E0005C5FC /* jobs.data in Resources */ = {isa = PBXBuildFile; fileRef = 53DF3EF02C0E585E0005C5FC /* jobs.data */; };
+		536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C538D2C8E464D00A7E4CD /* DataController.swift */; };
+		536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */; };
+		536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */; };
+		536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +33,10 @@
 		53257EBC2BF7EE82008443CB /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		538A3C082C0903D70026025F /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		53C5A2D52C0664DD0068DE68 /* JobStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStorage.swift; sourceTree = "<group>"; };
-		53DF3EF02C0E585E0005C5FC /* jobs.data */ = {isa = PBXFileReference; lastKnownFileType = text; path = jobs.data; sourceTree = "<group>"; };
+		536C538D2C8E464D00A7E4CD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobDatabase.xcdatamodel; sourceTree = "<group>"; };
+		536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 		538A3C0A2C0904550026025F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				53DF3EF02C0E585E0005C5FC /* jobs.data */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -125,8 +126,10 @@
 		53C5A2D42C0664BE0068DE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				53C5A2D52C0664DD0068DE68 /* JobStorage.swift */,
-				538A3C082C0903D70026025F /* Job.swift */,
+				536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */,
+				536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */,
+				536C538D2C8E464D00A7E4CD /* DataController.swift */,
+				536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,7 +194,6 @@
 			files = (
 				5317594C2BF3F8C700BED682 /* Preview Assets.xcassets in Resources */,
 				531759492BF3F8C700BED682 /* Assets.xcassets in Resources */,
-				53DF3EF12C0E585E0005C5FC /* jobs.data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,14 +204,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */,
+				536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */,
 				53260A382C06481200F041AE /* ListItem.swift in Sources */,
 				53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */,
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				53257EB92BF7DC94008443CB /* HomeView.swift in Sources */,
-				538A3C092C0903D70026025F /* Job.swift in Sources */,
-				53C5A2D62C0664DD0068DE68 /* JobStorage.swift in Sources */,
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
+				536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
+				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
 				53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +418,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */,
+			);
+			currentVersion = 536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */;
+			name = JobDatabase.xcdatamodeld;
+			path = /Users/jacobkelly/Documents/XCodeProjects/TaskTracker/TaskTracker/Models/JobDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 531759392BF3F8C400BED682 /* Project object */;
 }

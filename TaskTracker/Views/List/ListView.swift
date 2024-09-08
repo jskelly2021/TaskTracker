@@ -8,20 +8,38 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var jobStore: JobStorage
+    @Environment(\.managedObjectContext)
+    var context
+
+    @FetchRequest(sortDescriptors: [])
+    var jobs: FetchedResults<Job>
 
     var body: some View {
-
-        List {
-            ForEach(jobStore.jobs, id: \.name) { Job in
-                ListItem(item: Job)
+        VStack {
+            Button(action: {
+                let job = Job(context: context)
+                job.title = "Test Job"
+                try? context.save()
+            }, label: {
+                Text("Add job")
+            })
+            
+            List {
+                ForEach(jobs, id: \.self) { job in
+                    Text(job.title ?? "na")
+                }
+                .onDelete(perform: {offsets in
+                    context.delete(jobs[offsets.first ?? 0])
+                    try? context.save()
+                })
             }
+            
         }
-        .listStyle(.plain)
+        .padding()
     }
 }
 
 #Preview {
     ListView()
-        .environmentObject(JobStorage())
+        .environment(\.managedObjectContext, DataController().container.viewContext)
 }
