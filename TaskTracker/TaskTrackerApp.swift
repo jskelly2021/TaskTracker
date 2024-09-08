@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct TaskTrackerApp: App {
-
+    @StateObject var dataController: DataController = DataController()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
