@@ -15,7 +15,6 @@ class DataController: ObservableObject {
             if let error = error {
                 print("Error loading Core Data: \(error.localizedDescription)")
             }
-            
         }
     }
 }
