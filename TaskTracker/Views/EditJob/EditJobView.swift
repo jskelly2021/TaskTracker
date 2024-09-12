@@ -14,13 +14,33 @@ struct EditJobView: View {
     @FetchRequest(sortDescriptors: [])
     var jobs: FetchedResults<Job>
 
+    @State var jobTitle: String = ""
+    @State var jobDetails: String = ""
+
     var body: some View {
-        Button(action: {
+        VStack(alignment: .center, spacing: 10.0) {
+            HStack(spacing: 10.0) {
+                Spacer()
+                doneButton()
+            }
+            TextField("Title", text: $jobTitle, axis: .horizontal)
+                .font(.largeTitle)
+                .bold()
+            TextField("Details", text: $jobDetails, axis: .horizontal)
+                .font(.headline)
+            Spacer()
+        }
+        .padding()
+    }
+
+    func doneButton() -> some View {
+        return Button(action: {
             let job = Job(context: context)
-            job.title = "Test Job"
+            job.title = jobTitle
+            job.details = jobDetails
             try? context.save()
         }, label: {
-            Text("Add job")
+            Text("Done")
         })
     }
 }
