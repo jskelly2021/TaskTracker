@@ -16,6 +16,7 @@ struct EditJobView: View {
 
     @State var jobTitle: String = ""
     @State var jobDetails: String = ""
+    @State var jobDeadline: Date = Date()
 
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
@@ -23,11 +24,21 @@ struct EditJobView: View {
                 Spacer()
                 doneButton()
             }
+
             TextField("Title", text: $jobTitle, axis: .horizontal)
                 .font(.largeTitle)
                 .bold()
+
             TextField("Details", text: $jobDetails, axis: .horizontal)
                 .font(.headline)
+
+            Spacer()
+
+            Text("Deadline")
+                .font(.headline)
+            DatePicker("Deadline", selection: $jobDeadline, displayedComponents: .date)
+                .datePickerStyle(.graphical)
+                .id(jobDeadline)
             Spacer()
         }
         .padding()
@@ -38,6 +49,7 @@ struct EditJobView: View {
             let job = Job(context: context)
             job.title = jobTitle
             job.details = jobDetails
+            job.deadline = jobDeadline
             try? context.save()
         }, label: {
             Text("Done")
