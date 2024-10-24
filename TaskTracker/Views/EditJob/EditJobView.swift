@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct EditJobView: View {
-    @Environment(\.managedObjectContext)
-    var context
+    @Environment(\.managedObjectContext) var context
+
+    @Environment(\.presentationMode) var presentationMode
 
     @FetchRequest(sortDescriptors: [])
     var jobs: FetchedResults<Job>
@@ -25,11 +26,13 @@ struct EditJobView: View {
                 doneButton()
             }
 
-            TextField("Title", text: $jobTitle, axis: .horizontal)
+            TextField("Title", text: $jobTitle, axis: .vertical)
+                .lineLimit(3)
                 .font(.largeTitle)
                 .bold()
 
-            TextField("Details", text: $jobDetails, axis: .horizontal)
+            TextField("Details", text: $jobDetails, axis: .vertical)
+                .lineLimit(5)
                 .font(.headline)
 
             Spacer()
@@ -51,6 +54,7 @@ struct EditJobView: View {
             job.details = jobDetails
             job.deadline = jobDeadline
             try? context.save()
+            presentationMode.wrappedValue.dismiss()
         }, label: {
             Text("Done")
         })
