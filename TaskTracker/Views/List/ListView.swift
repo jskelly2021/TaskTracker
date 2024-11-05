@@ -10,7 +10,8 @@ import SwiftUI
 struct ListView: View {
     @Environment(\.managedObjectContext) var context
 
-    @FetchRequest(sortDescriptors: []) var jobs: FetchedResults<Job>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
+    var jobs: FetchedResults<Job>
 
     var body: some View {
         NavigationView {
