@@ -9,16 +9,23 @@ import SwiftUI
 
 struct EditJobView: View {
     @Environment(\.managedObjectContext) var context
-
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
 
     @FetchRequest(sortDescriptors: [])
     var jobs: FetchedResults<Job>
 
-    @State var jobTitle: String = ""
-    @State var jobDetails: String = ""
-    @State var jobDeadline: Date = Date()
+    var job: Job?
+    @State var jobTitle: String
+    @State var jobDetails: String
+    @State var jobDeadline: Date
 
+    init(job: Job? = nil) {
+        self.job = job
+        jobTitle = job?.title ?? ""
+        jobDetails = job?.details ?? ""
+        jobDeadline = job?.deadline ?? Date()
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
             HStack(spacing: 10.0) {
@@ -48,17 +55,22 @@ struct EditJobView: View {
     }
 
     func doneButton() -> some View {
-        return Button(action: {
-            let job = Job(context: context)
-            job.title = jobTitle
-            job.details = jobDetails
-            job.deadline = jobDeadline
-            try? context.save()
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
+        return Button(action: saveJob, label: {
             Text("Done")
         })
     }
+
+    func saveJob() {
+        let job = job ?? Job(context: context)
+
+        job.title = jobTitle
+        job.details = jobDetails
+        job.deadline = jobDeadline
+
+        try? context.save()
+        dismiss()
+    }
+
 }
 
 #Preview {
