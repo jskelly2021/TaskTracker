@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct ListView: View {
-    @Environment(\.managedObjectContext)
-    var context
+    @Environment(\.managedObjectContext) var context
 
-    @FetchRequest(sortDescriptors: [])
-    var jobs: FetchedResults<Job>
+    @FetchRequest(sortDescriptors: []) var jobs: FetchedResults<Job>
 
     var body: some View {
         NavigationView {
@@ -23,7 +21,7 @@ struct ListView: View {
 
                 List {
                     ForEach(jobs, id: \.self) { job in
-                        NavigationLink(destination: EditJobView()) {
+                        NavigationLink(destination: EditJobView(job: job)) {
                             Text(job.title ?? "na")
                         }
                     }

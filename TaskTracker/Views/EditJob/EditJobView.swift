@@ -11,9 +11,6 @@ struct EditJobView: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
 
-    @FetchRequest(sortDescriptors: [])
-    var jobs: FetchedResults<Job>
-
     var job: Job?
     @State var jobTitle: String
     @State var jobDetails: String
