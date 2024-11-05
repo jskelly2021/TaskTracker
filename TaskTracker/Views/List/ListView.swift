@@ -22,9 +22,7 @@ struct ListView: View {
 
                 List {
                     ForEach(jobs, id: \.self) { job in
-                        NavigationLink(destination: EditJobView(job: job)) {
-                            Text(job.title ?? "na")
-                        }
+                        ListItem(job: job)
                     }
                     .onDelete(perform: {offsets in
                         context.delete(jobs[offsets.first ?? 0])
