@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ListItem: View {
+    var job: Job
     var body: some View {
-        Text("List Item")
+        Button(
+            action: {
+                
+            },
+            label: {
+                Text(job.title ?? "na")
+            }
+        )
     }
-}
-
-#Preview {
-    ListItem()
 }
