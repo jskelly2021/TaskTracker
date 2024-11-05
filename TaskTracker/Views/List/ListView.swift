@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ListView: View {
-    @Environment(\.managedObjectContext)
-    var context
+    @Environment(\.managedObjectContext) var context
 
-    @FetchRequest(sortDescriptors: [])
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
 
     var body: some View {
@@ -23,7 +22,9 @@ struct ListView: View {
 
                 List {
                     ForEach(jobs, id: \.self) { job in
-                        Text(job.title ?? "na")
+                        NavigationLink(destination: EditJobView(job: job)) {
+                            Text(job.title ?? "na")
+                        }
                     }
                     .onDelete(perform: {offsets in
                         context.delete(jobs[offsets.first ?? 0])
