@@ -20,6 +20,7 @@
 		536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */; };
 		536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */; };
 		536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */; };
+		538C58272C928B3800454417 /* EditJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C58262C928B3800454417 /* EditJobView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobDatabase.xcdatamodel; sourceTree = "<group>"; };
 		536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		538C58262C928B3800454417 /* EditJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				531759462BF3F8C400BED682 /* ContentView.swift */,
 				53100CE12BFD0E5C0019A8F8 /* Home */,
 				53260A362C0647E000F041AE /* List */,
+				538C58232C928AD200454417 /* EditJob */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +124,14 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		538C58232C928AD200454417 /* EditJob */ = {
+			isa = PBXGroup;
+			children = (
+				538C58262C928B3800454417 /* EditJobView.swift */,
+			);
+			path = EditJob;
 			sourceTree = "<group>";
 		};
 		53C5A2D42C0664BE0068DE68 /* Models */ = {
@@ -204,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538C58272C928B3800454417 /* EditJobView.swift in Sources */,
 				536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */,
 				536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */,
 				53260A382C06481200F041AE /* ListItem.swift in Sources */,
@@ -348,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = M9XXLUF89C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -376,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = M9XXLUF89C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
