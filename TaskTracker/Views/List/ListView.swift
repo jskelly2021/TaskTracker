@@ -20,14 +20,15 @@ struct ListView: View {
                     Text("Create New")
                 }
 
-                List {
-                    ForEach(jobs, id: \.self) { job in
-                        ListItem(job: job)
-                    }
-                    .onDelete(perform: {offsets in
-                        context.delete(jobs[offsets.first ?? 0])
-                        try? context.save()
-                    })
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                        ForEach(jobs, id: \.self) { job in
+                            ListItem(job: job)
+                        }
+                        //TODO fix delete
+                        .onDelete(perform: {offsets in
+                            context.delete(jobs[offsets.first ?? 0])
+                            try? context.save()
+                        })
                 }
             }
             .padding()

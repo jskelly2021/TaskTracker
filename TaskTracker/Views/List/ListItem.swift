@@ -20,18 +20,27 @@ struct ListItem: View {
     
     var body: some View {
         NavigationLink(destination: EditJobView(job: job)) {
-            
-            VStack(alignment: .leading) {
-                Text(jobDeadline.formatted(.dateTime
-                    .month(.wide)
-                    .day())
-                )
+            ZStack() {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .shadow(radius: 2)
+
+                VStack(alignment: .leading) {
+                    Text(jobDeadline.formatted(.dateTime
+                        .month(.wide)
+                        .day())
+                    )
                     .font(.caption)
-                Text(jobTitle)
-                    .font(.headline)
+                    Text(jobTitle)
+                        .font(.headline)
+                }
+                .foregroundColor(.black)
+                .lineLimit(3)
+                .padding()
             }
-            .foregroundColor(.black)
-            .lineLimit(1)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding()
         }
     }
 }

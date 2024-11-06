@@ -13,16 +13,6 @@ struct Hexagon: Shape {
             let hOffset: CGFloat = sqrt((rect.width / 2 * rect.width / 2) - (rect.width / 4 * rect.width / 4))
             let vOffset: CGFloat = rect.height / 4
 
-//            path.move(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
-//            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.minY))
-//            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + vOffset))
-//            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - vOffset))
-//            path.addLine(to: CGPoint(x: rect.maxX - hOffset, y: rect.maxY))
-//            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.maxY))
-//            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - vOffset))
-//            path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + vOffset))
-//            path.addLine(to: CGPoint(x: rect.minX + hOffset, y: rect.minY))
-            
             path.move    (to: CGPoint(x: rect.midX,             y: rect.minY))
             path.addLine (to: CGPoint(x: rect.midX + hOffset,   y: rect.minY + vOffset))
             path.addLine (to: CGPoint(x: rect.midX + hOffset,   y: rect.maxY - vOffset))
