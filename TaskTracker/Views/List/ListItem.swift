@@ -35,12 +35,12 @@ struct ListItem: View {
                     Text(jobTitle)
                         .font(.headline)
                 }
+                .multilineTextAlignment(.leading)
                 .foregroundColor(.black)
-                .lineLimit(3)
+                .lineLimit(2)
                 .padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding()
         }
     }
 }
