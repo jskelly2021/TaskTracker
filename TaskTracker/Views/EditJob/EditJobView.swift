@@ -46,7 +46,10 @@ struct EditJobView: View {
             DatePicker("Deadline", selection: $jobDeadline, displayedComponents: .date)
                 .datePickerStyle(.graphical)
                 .id(jobDeadline)
+
             Spacer()
+
+            deleteButton()
         }
         .padding()
     }
@@ -55,6 +58,14 @@ struct EditJobView: View {
         return Button(action: saveJob, label: {
             Text("Done")
         })
+    }
+
+    func deleteButton() -> some View {
+        Button(action: deleteJob) {
+            Image(systemName: "trash")
+                .foregroundColor(.red)
+                .padding(8)
+            }
     }
 
     func saveJob() {
@@ -68,6 +79,17 @@ struct EditJobView: View {
         dismiss()
     }
 
+    func deleteJob() {
+        guard let job
+        else {
+            print("Job is Nil")
+            return
+        }
+
+        context.delete(job)
+        try? context.save()
+        dismiss()
+    }
 }
 
 #Preview {

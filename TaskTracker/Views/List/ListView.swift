@@ -15,24 +15,22 @@ struct ListView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(destination: EditJobView()) {
-                    Text("Create New")
-                }
-
-                List {
-                    ForEach(jobs, id: \.self) { job in
-                        NavigationLink(destination: EditJobView(job: job)) {
-                            Text(job.title ?? "na")
+            ScrollView {
+                VStack {
+                    HStack {
+                        NavigationLink(destination: EditJobView()) {
+                            Text("Create New")
                         }
                     }
-                    .onDelete(perform: {offsets in
-                        context.delete(jobs[offsets.first ?? 0])
-                        try? context.save()
-                    })
+
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                        ForEach(jobs, id: \.self) { job in
+                            ListItem(job: job)
+                        }
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
