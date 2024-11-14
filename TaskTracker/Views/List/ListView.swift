@@ -18,9 +18,7 @@ struct ListView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        NavigationLink(destination: EditJobView()) {
-                            Text("Create New")
-                        }
+                        newTaskButton()
                     }
 
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
@@ -31,6 +29,19 @@ struct ListView: View {
                 }
                 .padding()
             }
+        }
+    }
+
+    func newTaskButton() -> some View {
+        NavigationLink(destination: EditJobView()) {
+            Text("Create New")
+                .padding()
+                .background(
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                        .shadow(radius: 2)
+                )
         }
     }
 }
