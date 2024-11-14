@@ -26,7 +26,7 @@ struct TaskHost: View {
                 TaskSummary()
             }
             else {
-                EditJobView()
+                EditTask()
             }
         }
         .padding()

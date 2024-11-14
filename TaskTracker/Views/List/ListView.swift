@@ -33,7 +33,7 @@ struct ListView: View {
     }
 
     func newTaskButton() -> some View {
-        NavigationLink(destination: EditJobView()) {
+        NavigationLink(destination: EditTask()) {
             Text("Create New")
                 .padding()
                 .background(

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditJobView: View {
+struct EditTask: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
 
@@ -93,6 +93,6 @@ struct EditJobView: View {
 }
 
 #Preview {
-    EditJobView()
+    EditTask()
         .environment(\.managedObjectContext, DataController().container.viewContext)
 }
