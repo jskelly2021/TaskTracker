@@ -25,11 +25,6 @@ struct EditTask: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            HStack(spacing: 10.0) {
-                Spacer()
-                doneButton()
-            }
-
             TextField("Title", text: $jobTitle, axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)

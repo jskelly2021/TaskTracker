@@ -24,9 +24,7 @@ struct TaskHost: View {
                 Spacer()
                 EditButton()
             }
-            
-            Spacer()
-            
+
             if editMode?.wrappedValue == .inactive {
                 TaskSummary()
             }
