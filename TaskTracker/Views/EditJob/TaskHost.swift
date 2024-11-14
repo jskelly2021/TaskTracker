@@ -16,6 +16,11 @@ struct TaskHost: View {
     var body: some View {
         VStack {
             HStack {
+                if editMode?.wrappedValue == .active {
+                    Button("Cancel", role: .cancel) {
+                        editMode?.animation().wrappedValue = .inactive
+                    }
+                }
                 Spacer()
                 EditButton()
             }

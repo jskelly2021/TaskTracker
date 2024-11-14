@@ -19,7 +19,7 @@ struct ListItem: View {
     }
     
     var body: some View {
-        NavigationLink(destination: EditJobView(job: job)) {
+        NavigationLink(destination: EditTask(job: job)) {
             ZStack() {
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
