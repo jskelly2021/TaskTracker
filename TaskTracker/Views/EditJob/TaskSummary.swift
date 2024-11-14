@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct TaskSummary: View {
-    var body: some View {
-        Rectangle()
-            .cornerRadius(8)
-            .frame(width: 20, height: 20)
+    var job: Job?
+    var jobTitle: String
+    var jobDetails: String
+    var jobDeadline: Date
+
+    init(job: Job? = nil) {
+        self.job = job
+        jobTitle = job?.title ?? "No Title"
+        jobDetails = job?.details ?? "No Details"
+        jobDeadline = job?.deadline ?? Date()
     }
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(jobTitle)
+                    .lineLimit(3)
+                    .font(.largeTitle)
+                    .bold()
+
+                Text(jobDetails)
+                    .lineLimit(5)
+                    .font(.headline)
+
+                Divider()
+
+                Text("Deadline")
+                    .font(.headline)
+                Text(jobDeadline.formatted(date: .abbreviated, time: .shortened))
+
+                Spacer()
+            }
+            Spacer()
+        }
+    }
+
 }
 
 #Preview {

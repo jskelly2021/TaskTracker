@@ -12,6 +12,10 @@ struct TaskHost: View {
     @Environment(\.dismiss) var dismiss
 
     var job: Job?
+    
+    init(job: Job? = nil) {
+        self.job = job
+    }
 
     var body: some View {
         VStack {
@@ -26,10 +30,10 @@ struct TaskHost: View {
             }
 
             if editMode?.wrappedValue == .inactive {
-                TaskSummary()
+                TaskSummary(job: job)
             }
             else {
-                EditTask()
+                EditTask(job: job)
             }
         }
         .padding()
