@@ -49,12 +49,6 @@ struct EditTask: View {
         .padding()
     }
 
-    func doneButton() -> some View {
-        return Button(action: saveJob, label: {
-            Text("Done")
-        })
-    }
-
     func deleteButton() -> some View {
         Button(action: deleteJob) {
             Image(systemName: "trash")
@@ -63,7 +57,7 @@ struct EditTask: View {
             }
     }
 
-    func saveJob() {
+    func saveChanges() {
         let job = job ?? Job(context: context)
 
         job.title = jobTitle

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct TaskHost: View {
+    @Environment(\.managedObjectContext) var context
     @Environment(\.editMode) var editMode
-    @Environment(\.dismiss) var dismiss
 
-    var job: Job?
+    @State var job: Job?
     
     init(job: Job? = nil) {
-        self.job = job
+        _job = State(initialValue: job ?? Job(context: context))
     }
 
     var body: some View {
@@ -22,6 +22,7 @@ struct TaskHost: View {
             HStack {
                 if editMode?.wrappedValue == .active {
                     Button("Cancel", role: .cancel) {
+                        context.rollback()
                         editMode?.animation().wrappedValue = .inactive
                     }
                 }
