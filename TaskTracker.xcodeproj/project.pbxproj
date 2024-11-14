@@ -16,6 +16,8 @@
 		53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257EBC2BF7EE82008443CB /* CategoryView.swift */; };
 		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
 		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
+		536218562CE642200038E76D /* TaskHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536218552CE642120038E76D /* TaskHost.swift */; };
+		536218582CE643980038E76D /* TaskSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536218572CE6438F0038E76D /* TaskSummary.swift */; };
 		536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C538D2C8E464D00A7E4CD /* DataController.swift */; };
 		536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */; };
 		536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */; };
@@ -34,6 +36,8 @@
 		53257EBC2BF7EE82008443CB /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		536218552CE642120038E76D /* TaskHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHost.swift; sourceTree = "<group>"; };
+		536218572CE6438F0038E76D /* TaskSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummary.swift; sourceTree = "<group>"; };
 		536C538D2C8E464D00A7E4CD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobDatabase.xcdatamodel; sourceTree = "<group>"; };
 		536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -129,6 +133,8 @@
 		538C58232C928AD200454417 /* EditJob */ = {
 			isa = PBXGroup;
 			children = (
+				536218572CE6438F0038E76D /* TaskSummary.swift */,
+				536218552CE642120038E76D /* TaskHost.swift */,
 				538C58262C928B3800454417 /* EditJobView.swift */,
 			);
 			path = EditJob;
@@ -222,8 +228,10 @@
 				53257EBB2BF7DE47008443CB /* CategoryPanel.swift in Sources */,
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				53257EB92BF7DC94008443CB /* HomeView.swift in Sources */,
+				536218562CE642200038E76D /* TaskHost.swift in Sources */,
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */,
+				536218582CE643980038E76D /* TaskSummary.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
 				53257EBD2BF7EE82008443CB /* CategoryView.swift in Sources */,
