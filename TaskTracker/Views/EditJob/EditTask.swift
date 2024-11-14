@@ -11,26 +11,16 @@ struct EditTask: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
 
-    var job: Job?
-    @State var jobTitle: String
-    @State var jobDetails: String
-    @State var jobDeadline: Date
+    @Binding var job: Job
 
-    init(job: Job? = nil) {
-        self.job = job
-        jobTitle = job?.title ?? ""
-        jobDetails = job?.details ?? ""
-        jobDeadline = job?.deadline ?? Date()
-    }
-    
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            TextField("Title", text: $jobTitle, axis: .vertical)
+            TextField("Title", text: $job.title ?? "", axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)
                 .bold()
 
-            TextField("Details", text: $jobDetails, axis: .vertical)
+            TextField("Details", text: $job.details, axis: .vertical)
                 .lineLimit(5)
                 .font(.headline)
 
@@ -38,9 +28,9 @@ struct EditTask: View {
 
             Text("Deadline")
                 .font(.headline)
-            DatePicker("Deadline", selection: $jobDeadline, displayedComponents: .date)
+            DatePicker("Deadline", selection: $job.deadline, displayedComponents: .date)
                 .datePickerStyle(.graphical)
-                .id(jobDeadline)
+                .id(job.deadline)
 
             Spacer()
 
@@ -57,31 +47,27 @@ struct EditTask: View {
             }
     }
 
-    func saveChanges() {
-        let job = job ?? Job(context: context)
-
-        job.title = jobTitle
-        job.details = jobDetails
-        job.deadline = jobDeadline
-
-        try? context.save()
-        dismiss()
-    }
-
     func deleteJob() {
-        guard let job
-        else {
-            print("Job is Nil")
-            return
-        }
-
         context.delete(job)
         try? context.save()
         dismiss()
     }
 }
 
-#Preview {
-    EditTask()
-        .environment(\.managedObjectContext, DataController().container.viewContext)
+import CoreData
+struct EditTask_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel())
+
+        let sampleJob = Job(context: context)
+        sampleJob.title = "Sample Title"
+        sampleJob.details = "Sample Details"
+        sampleJob.deadline = Date()
+
+        @State var job = sampleJob
+
+        return EditTask(job: $job)
+            .environment(\.managedObjectContext, context)
+    }
 }

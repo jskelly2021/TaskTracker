@@ -12,9 +12,9 @@ struct TaskHost: View {
     @Environment(\.editMode) var editMode
 
     @State var job: Job?
-    
+
     init(job: Job? = nil) {
-        _job = State(initialValue: job ?? Job(context: context))
+        _job = State(initialValue: job)
     }
 
     var body: some View {
@@ -38,7 +38,23 @@ struct TaskHost: View {
             }
         }
         .padding()
+        .onAppear {
+            if job == nil {
+                editMode?.wrappedValue = .active
+            }
+        }
     }
+
+//    func saveChanges() {
+//        let job = job ?? Job(context: context)
+//
+//        job.title = jobTitle
+//        job.details = jobDetails
+//        job.deadline = jobDeadline
+//
+//        try? context.save()
+//        dismiss()
+//    }
 }
 
 #Preview {
