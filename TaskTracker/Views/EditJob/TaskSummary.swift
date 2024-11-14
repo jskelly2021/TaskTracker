@@ -10,6 +10,8 @@ import SwiftUI
 struct TaskSummary: View {
     var body: some View {
         Rectangle()
+            .cornerRadius(8)
+            .frame(width: 20, height: 20)
     }
 }
 
