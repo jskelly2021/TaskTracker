@@ -13,14 +13,16 @@ struct EditTask: View {
 
     @Binding var job: Job
 
+    @State var jobTitle: String = ""
+
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            TextField("Title", text: $job.title ?? "", axis: .vertical)
+            TextField("Title", text: $job.title.fallback(""), axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)
                 .bold()
 
-            TextField("Details", text: $job.details, axis: .vertical)
+            TextField("Details", text: $job.details.fallback(""), axis: .vertical)
                 .lineLimit(5)
                 .font(.headline)
 
@@ -28,7 +30,7 @@ struct EditTask: View {
 
             Text("Deadline")
                 .font(.headline)
-            DatePicker("Deadline", selection: $job.deadline, displayedComponents: .date)
+            DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                 .datePickerStyle(.graphical)
                 .id(job.deadline)
 

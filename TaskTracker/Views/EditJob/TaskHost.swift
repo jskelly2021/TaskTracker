@@ -34,7 +34,7 @@ struct TaskHost: View {
                 TaskSummary(job: job)
             }
             else {
-                EditTask(job: job)
+                EditTask(job: $job)
             }
         }
         .padding()
