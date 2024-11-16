@@ -10,12 +10,9 @@ import SwiftUI
 struct TaskHost: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.editMode) var editMode
+    @Environment(\.dismiss) var dismiss
 
-    @State var job: Job?
-
-    init(job: Job? = nil) {
-        _job = State(initialValue: job)
-    }
+    @State var job: Job
 
     var body: some View {
         VStack {
@@ -38,25 +35,10 @@ struct TaskHost: View {
             }
         }
         .padding()
-        .onAppear {
-            if job == nil {
-                editMode?.wrappedValue = .active
-            }
-        }
     }
 
-//    func saveChanges() {
-//        let job = job ?? Job(context: context)
-//
-//        job.title = jobTitle
-//        job.details = jobDetails
-//        job.deadline = jobDeadline
-//
-//        try? context.save()
-//        dismiss()
-//    }
-}
-
-#Preview {
-    TaskHost()
+    func saveChanges() {
+        try? context.save()
+        dismiss()
+    }
 }

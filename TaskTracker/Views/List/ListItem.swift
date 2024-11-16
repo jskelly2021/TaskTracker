@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ListItem: View {
-    var job: Job?
+    var job: Job
     var jobTitle: String
     var jobDeadline: Date
 
-    init(job: Job? = nil) {
+    init(job: Job) {
         self.job = job
-        self.jobTitle = job?.title ?? "Missing Title"
-        self.jobDeadline = job?.deadline ?? Date()
+        self.jobTitle = job.title ?? "Missing Title"
+        self.jobDeadline = job.deadline ?? Date()
     }
     
     var body: some View {
-        NavigationLink(destination: EditTask(job: job)) {
+        NavigationLink(destination: TaskHost(job: job)) {
             ZStack() {
                 Rectangle()
                     .fill(Color.gray.opacity(0.2))
@@ -45,6 +45,3 @@ struct ListItem: View {
     }
 }
 
-#Preview {
-    ListItem()
-}

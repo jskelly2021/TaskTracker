@@ -33,14 +33,13 @@ struct ListView: View {
     }
 
     func newTaskButton() -> some View {
-        NavigationLink(destination: EditTask()) {
+        NavigationLink(destination: TaskHost(job: Job(context: context))) {
             Text("Create New")
                 .padding()
-                .background(
-                    Rectangle()
-                        .fill(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                        .shadow(radius: 2)
+                .background(Rectangle()
+                    .fill(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .shadow(radius: 2)
                 )
         }
     }

@@ -55,21 +55,3 @@ struct EditTask: View {
         dismiss()
     }
 }
-
-import CoreData
-struct EditTask_Previews: PreviewProvider {
-    static var previews: some View {
-        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        context.persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel())
-
-        let sampleJob = Job(context: context)
-        sampleJob.title = "Sample Title"
-        sampleJob.details = "Sample Details"
-        sampleJob.deadline = Date()
-
-        @State var job = sampleJob
-
-        return EditTask(job: $job)
-            .environment(\.managedObjectContext, context)
-    }
-}
