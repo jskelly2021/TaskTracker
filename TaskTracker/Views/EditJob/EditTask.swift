@@ -55,3 +55,14 @@ struct EditTask: View {
         dismiss()
     }
 }
+
+#Preview {
+    let context = DataController().container.viewContext
+    let job = Job(context: context)
+    job.title = "Sample Task"
+    job.details = "A simple task for testing the preview."
+    job.deadline = Date()
+
+    return EditTask(job: .constant(job))
+        .environment(\.managedObjectContext, context)
+}

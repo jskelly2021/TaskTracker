@@ -14,7 +14,7 @@ struct ListItem: View {
 
     init(job: Job) {
         self.job = job
-        self.jobTitle = job.title ?? "Missing Title"
+        self.jobTitle = job.title ?? "No Title"
         self.jobDeadline = job.deadline ?? Date()
     }
     
@@ -45,3 +45,13 @@ struct ListItem: View {
     }
 }
 
+#Preview {
+    let context = DataController().container.viewContext
+    let job = Job(context: context)
+    job.title = "Sample Task"
+    job.details = "A simple task for testing the preview."
+    job.deadline = Date()
+
+    return ListItem(job: job)
+        .environment(\.managedObjectContext, context)
+}
