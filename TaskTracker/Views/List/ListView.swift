@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ListView: View {
     @Environment(\.managedObjectContext) var context
-
+    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     HStack {
-                        newTaskButton()
+                        NavigationLink(destination: TaskHost(createNew: true)) {
+                            Text("Create New")
+                        }
                     }
 
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
@@ -26,26 +28,14 @@ struct ListView: View {
                             ListItem(job: job)
                         }
                     }
+                    .padding()
                 }
-                .padding()
             }
-        }
-    }
-
-    func newTaskButton() -> some View {
-        NavigationLink(destination: TaskHost(job: Job(context: context))) {
-            Text("Create New")
-                .padding()
-                .background(Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-                    .shadow(radius: 2)
-                )
         }
     }
 }
 
-//#Preview {
-//    return ListView()
-//        .environment(\.managedObjectContext, DataController(inMemory: true).container.viewContext)
-//}
+#Preview {
+    return ListView()
+        .environment(\.managedObjectContext, DataController(inMemory: true).container.viewContext)
+}

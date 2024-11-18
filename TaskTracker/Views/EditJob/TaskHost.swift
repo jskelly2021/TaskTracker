@@ -12,7 +12,13 @@ struct TaskHost: View {
     @Environment(\.editMode) var editMode
     @Environment(\.dismiss) var dismiss
 
-    @State var job: Job
+    var job: Job?
+    var createNew: Bool
+
+    init(job: Job? = nil, createNew: Bool = false) {
+        self.createNew = createNew
+        self.job = job
+    }
 
     var body: some View {
         VStack {
@@ -31,7 +37,7 @@ struct TaskHost: View {
                 TaskSummary(job: job)
             }
             else {
-                EditTask(job: $job)
+//                EditTask(job: $job)
             }
         }
         .padding()
