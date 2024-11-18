@@ -45,7 +45,7 @@ struct ListView: View {
     }
 }
 
-#Preview {
-    ListView()
-        .environment(\.managedObjectContext, DataController().container.viewContext)
-}
+//#Preview {
+//    return ListView()
+//        .environment(\.managedObjectContext, DataController(inMemory: true).container.viewContext)
+//}
