@@ -41,6 +41,11 @@ struct TaskHost: View {
             }
         }
         .padding()
+        .onAppear {
+            if createNew {
+                editMode?.wrappedValue = .active
+            }
+        }
     }
 
     func saveChanges() {
