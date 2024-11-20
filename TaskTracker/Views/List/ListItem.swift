@@ -14,7 +14,7 @@ struct ListItem: View {
 
     init(job: Job) {
         self.job = job
-        self.jobTitle = job.title ?? "No Title"
+        self.jobTitle = job.title ?? ""
         self.jobDeadline = job.deadline ?? Date()
     }
     

@@ -21,8 +21,8 @@ struct TaskHost: View {
     init(job: Job? = nil, createNew: Bool = false) {
         self.createNew = createNew
         self.job = job
-        self.jobTitle = job?.title ?? "No Title"
-        self.jobDetails = job?.details ?? "No Details"
+        self.jobTitle = job?.title ?? ""
+        self.jobDetails = job?.details ?? ""
         self.jobDeadline = job?.deadline ?? Date()
     }
 
@@ -74,7 +74,7 @@ struct TaskHost: View {
 }
 
 #Preview {
-    let context = DataController().container.viewContext
+    let context = DataController(inMemory: true).container.viewContext
     let job = Job(context: context)
     job.title = "Sample Task"
     job.details = "A simple task for testing the preview."

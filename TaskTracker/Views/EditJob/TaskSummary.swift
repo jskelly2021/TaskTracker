@@ -15,8 +15,8 @@ struct TaskSummary: View {
 
     init(job: Job? = nil) {
         self.job = job
-        jobTitle = job?.title ?? "No Title"
-        jobDetails = job?.details ?? "No Details"
+        jobTitle = job?.title ?? ""
+        jobDetails = job?.details ?? ""
         jobDeadline = job?.deadline ?? Date()
     }
     
