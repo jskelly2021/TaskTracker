@@ -24,5 +24,24 @@ class DataController: ObservableObject {
                 print("Error loading Core Data: \(error.localizedDescription)")
             }
         }
+
+        // DELETING TASKS
+//        deleteAllTasks(from: container.viewContext)
     }
+
+    func deleteAllTasks(from context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Job.fetchRequest()
+
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+            print("All tasks deleted successfully.")
+        }
+        catch {
+            print("Failed to delete tasks: \(error.localizedDescription)")
+        }
+    }
+
 }

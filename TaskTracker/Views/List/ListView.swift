@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     @Environment(\.managedObjectContext) var context
-    
+
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
     

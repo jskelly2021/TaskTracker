@@ -11,18 +11,18 @@ struct EditTask: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
 
-    @Binding var job: Job
-
-    @State var jobTitle: String = ""
+    @Binding var jobTitle: String
+    @Binding var jobDetails: String
+    @Binding var jobDeadline: Date
 
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            TextField("Title", text: $job.title.fallback(""), axis: .vertical)
+            TextField("Title", text: $jobTitle, axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)
                 .bold()
 
-            TextField("Details", text: $job.details.fallback(""), axis: .vertical)
+            TextField("Details", text: $jobDetails, axis: .vertical)
                 .lineLimit(5)
                 .font(.headline)
 
@@ -30,39 +30,38 @@ struct EditTask: View {
 
             Text("Deadline")
                 .font(.headline)
-            DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
+            DatePicker("Deadline", selection: $jobDeadline, displayedComponents: .date)
                 .datePickerStyle(.graphical)
-                .id(job.deadline)
+                .id(jobDeadline)
 
             Spacer()
 
-            deleteButton()
+//            deleteButton()
         }
-        .padding()
     }
 
-    func deleteButton() -> some View {
-        Button(action: deleteJob) {
-            Image(systemName: "trash")
-                .foregroundColor(.red)
-                .padding(8)
-            }
-    }
-
-    func deleteJob() {
-        context.delete(job)
-        try? context.save()
-        dismiss()
-    }
+//    func deleteButton() -> some View {
+//        Button(action: deleteJob) {
+//            Image(systemName: "trash")
+//                .foregroundColor(.red)
+//                .padding(8)
+//            }
+//    }
+//
+//    func deleteJob() {
+//        context.delete(job)
+//        try? context.save()
+//        dismiss()
+//    }
 }
 
-#Preview {
-    let context = DataController().container.viewContext
-    let job = Job(context: context)
-    job.title = "Sample Task"
-    job.details = "A simple task for testing the preview."
-    job.deadline = Date()
-
-    return EditTask(job: .constant(job))
-        .environment(\.managedObjectContext, context)
-}
+//#Preview {
+//    let context = DataController().container.viewContext
+//    let job = Job(context: context)
+//    job.title = "Sample Task"
+//    job.details = "A simple task for testing the preview."
+//    job.deadline = Date()
+//
+//    return EditTask(job: .constant(job))
+//        .environment(\.managedObjectContext, context)
+//}

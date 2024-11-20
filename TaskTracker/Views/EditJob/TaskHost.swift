@@ -12,12 +12,18 @@ struct TaskHost: View {
     @Environment(\.editMode) var editMode
     @Environment(\.dismiss) var dismiss
 
-    var job: Job?
     var createNew: Bool
+    var job: Job?
+    @State var jobTitle: String
+    @State var jobDetails: String
+    @State var jobDeadline: Date
 
     init(job: Job? = nil, createNew: Bool = false) {
         self.createNew = createNew
         self.job = job
+        self.jobTitle = job?.title ?? "No Title"
+        self.jobDetails = job?.details ?? "No Details"
+        self.jobDeadline = job?.deadline ?? Date()
     }
 
     var body: some View {
@@ -37,7 +43,7 @@ struct TaskHost: View {
                 TaskSummary(job: job)
             }
             else {
-//                EditTask(job: $job)
+                EditTask(jobTitle: $jobTitle, jobDetails: $jobDetails, jobDeadline: $jobDeadline)
             }
         }
         .padding()
@@ -46,11 +52,24 @@ struct TaskHost: View {
                 editMode?.wrappedValue = .active
             }
         }
+        .onChange(of: editMode?.wrappedValue) {
+            if editMode?.wrappedValue == .inactive {
+                saveChanges()
+            }
+        }
+
     }
 
     func saveChanges() {
-        try? context.save()
-        dismiss()
+        let jobToSave = self.job ?? Job(context: context)
+
+        jobToSave.title = jobTitle
+        jobToSave.details = jobDetails
+        jobToSave.deadline = jobDeadline
+
+        if context.hasChanges {
+            print("Context has Changes")
+        }
     }
 }
 
