@@ -14,7 +14,7 @@ struct EditTask: View {
     @ObservedObject var job: Job
 
     var body: some View {
-        VStack(alignment: .center, spacing: 10.0) {
+        VStack(alignment: .leading, spacing: 10.0) {
             TextField("Title", text: $job.title.fallback(""), axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)
@@ -26,8 +26,9 @@ struct EditTask: View {
 
             Spacer()
 
-            Text("Deadline")
+            Text("Time Scale")
                 .font(.headline)
+
             DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                 .datePickerStyle(.graphical)
                 .id(job.deadline ?? Date())

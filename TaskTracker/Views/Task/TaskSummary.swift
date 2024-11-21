@@ -19,7 +19,7 @@ struct TaskSummary: View {
         jobTitle = job.title ?? ""
         jobDetails = job.details ?? ""
         jobDeadline = job.deadline ?? Date()
-        jobTimeScale = TimeScales(rawValue: job.repetition) ?? .single
+        jobTimeScale = TimeScales(rawValue: job.timeScale) ?? .single
     }
 
     var body: some View {
@@ -48,7 +48,7 @@ struct TaskSummary: View {
                     VStack(alignment: .leading) {
                         Text("Repeats:")
                             .font(.headline)
-                        Text("\(jobTimeScale.toString())")
+                        Text("\(jobTimeScale)")
                     }
                 }
 
