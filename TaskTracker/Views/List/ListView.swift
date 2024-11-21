@@ -19,11 +19,15 @@ struct ListView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {
-                    HStack {
-                        createNewButton()
+                    if jobs.isEmpty {
+                        Text("No Tasks Available")
+                            .foregroundColor(.gray)
+                            .padding()
                     }
-                    jobGrid()
-                        .padding()
+                    else {
+                        jobGrid()
+                            .padding()
+                        }
                 }
             }
             .navigationDestination(for: Destinations.self) { destination in
@@ -32,6 +36,12 @@ struct ListView: View {
                     TaskHost(job: job)
                 case .CreateTask(let job):
                     TaskHost(job: job, createNew: true)
+                }
+            }
+            .navigationTitle("Your Tasks")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    createNewButton()
                 }
             }
         }
@@ -55,7 +65,7 @@ struct ListView: View {
             path.append(Destinations.CreateTask(newTask))
         }
         label: {
-            Text("Create New")
+            Image(systemName: "plus.circle")
         }
     }
 }
