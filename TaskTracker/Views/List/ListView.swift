@@ -34,6 +34,7 @@ struct ListView: View {
                     TaskHost(job: job, createNew: true)
                 }
             }
+            .navigationTitle("Your Tasks")
         }
     }
 
