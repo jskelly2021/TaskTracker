@@ -54,7 +54,7 @@ struct EditTask: View {
 }
 
 #Preview {
-    let context = DataController().container.viewContext
+    let context = DataController(inMemory: true).container.viewContext
     let job = Job(context: context)
     job.title = "Sample Task"
     job.details = "A simple task for testing the preview."

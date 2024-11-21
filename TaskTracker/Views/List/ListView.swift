@@ -13,24 +13,43 @@ struct ListView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
 
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ScrollView {
                 VStack {
                     HStack {
-                        NavigationLink(destination: TaskHost(job: newTask(), createNew: true)) {
-                            Text("Create New")
-                        }
+                        createNewButton()
                     }
-
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                        ForEach(jobs, id: \.self) { job in
-                            ListItem(job: job)
-                        }
-                    }
-                    .padding()
+                    jobGrid()
+                        .padding()
                 }
             }
+            .navigationDestination(for: Destinations.self) { destination in
+                switch destination {
+                case .ViewTask(let job):
+                    TaskHost(job: job)
+                case .CreateTask:
+                    TaskHost(job: newTask(), createNew: true)
+                }
+            }
+        }
+    }
+
+    private func jobGrid() -> some View {
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+            ForEach(jobs, id: \.self) { job in
+                ListItem(job: job)
+            }
+        }
+    }
+
+    private func createNewButton() -> some View {
+        Button {
+            path.append(Destinations.CreateTask)
+        } label: {
+            Text("Create New")
         }
     }
 
