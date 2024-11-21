@@ -19,8 +19,15 @@ struct ListView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {
-                    jobGrid()
-                        .padding()
+                    if jobs.isEmpty {
+                        Text("No Tasks Available")
+                            .foregroundColor(.gray)
+                            .padding()
+                    }
+                    else {
+                        jobGrid()
+                            .padding()
+                        }
                 }
             }
             .navigationDestination(for: Destinations.self) { destination in
