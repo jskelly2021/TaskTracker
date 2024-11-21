@@ -96,7 +96,7 @@
 			children = (
 				531759462BF3F8C400BED682 /* ContentView.swift */,
 				53260A362C0647E000F041AE /* List */,
-				538C58232C928AD200454417 /* EditJob */,
+				538C58232C928AD200454417 /* Task */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,14 +117,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		538C58232C928AD200454417 /* EditJob */ = {
+		538C58232C928AD200454417 /* Task */ = {
 			isa = PBXGroup;
 			children = (
 				536218572CE6438F0038E76D /* TaskSummary.swift */,
 				536218552CE642120038E76D /* TaskHost.swift */,
 				538C58262C928B3800454417 /* EditTask.swift */,
 			);
-			path = EditJob;
+			path = Task;
 			sourceTree = "<group>";
 		};
 		53C5A2D42C0664BE0068DE68 /* Models */ = {
