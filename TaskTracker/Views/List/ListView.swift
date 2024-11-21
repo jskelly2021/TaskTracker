@@ -19,9 +19,6 @@ struct ListView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack {
-                    HStack {
-                        createNewButton()
-                    }
                     jobGrid()
                         .padding()
                 }
@@ -35,6 +32,11 @@ struct ListView: View {
                 }
             }
             .navigationTitle("Your Tasks")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    createNewButton()
+                }
+            }
         }
     }
 
