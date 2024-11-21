@@ -13,29 +13,54 @@ struct ListView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
 
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ScrollView {
                 VStack {
                     HStack {
-                        NavigationLink(destination: EditJobView()) {
-                            Text("Create New")
-                        }
+                        createNewButton()
                     }
-
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                        ForEach(jobs, id: \.self) { job in
-                            ListItem(job: job)
-                        }
-                    }
+                    jobGrid()
+                        .padding()
                 }
-                .padding()
             }
+            .navigationDestination(for: Destinations.self) { destination in
+                switch destination {
+                case .ViewTask(let job):
+                    TaskHost(job: job)
+                case .CreateTask(let job):
+                    TaskHost(job: job, createNew: true)
+                }
+            }
+        }
+    }
+
+    private func jobGrid() -> some View {
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+            ForEach(jobs, id: \.self) { job in
+                ListItem(job: job)
+            }
+        }
+    }
+
+    private func createNewButton() -> some View {
+        Button {
+            let newTask = Job(context: context)
+            newTask.title = ""
+            newTask.details = ""
+            newTask.deadline = Date()
+
+            path.append(Destinations.CreateTask(newTask))
+        }
+        label: {
+            Text("Create New")
         }
     }
 }
 
 #Preview {
-    ListView()
-        .environment(\.managedObjectContext, DataController().container.viewContext)
+    return ListView()
+        .environment(\.managedObjectContext, DataController(inMemory: true).container.viewContext)
 }
