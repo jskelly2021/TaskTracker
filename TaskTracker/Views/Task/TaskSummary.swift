@@ -12,14 +12,16 @@ struct TaskSummary: View {
     var jobTitle: String
     var jobDetails: String
     var jobDeadline: Date
+    var jobTimeScale: TimeScales
 
     init(job: Job) {
         self.job = job
         jobTitle = job.title ?? ""
         jobDetails = job.details ?? ""
         jobDeadline = job.deadline ?? Date()
+        jobTimeScale = TimeScales(rawValue: job.repetition) ?? .single
     }
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -34,9 +36,21 @@ struct TaskSummary: View {
 
                 Divider()
 
-                Text("Deadline")
-                    .font(.headline)
-                Text(jobDeadline.formatted(date: .abbreviated, time: .shortened))
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Next Deadline")
+                            .font(.headline)
+                        Text(jobDeadline.formatted(date: .abbreviated, time: .shortened))
+                    }
+
+                    Spacer()
+
+                    VStack(alignment: .leading) {
+                        Text("Repeats:")
+                            .font(.headline)
+                        Text("\(jobTimeScale.toString())")
+                    }
+                }
 
                 Spacer()
             }

@@ -20,7 +20,7 @@ extension Job {
     @NSManaged public var details: String?
     @NSManaged public var status: Bool
     @NSManaged public var title: String?
-    @NSManaged public var repetition: Int32
+    @NSManaged public var repetition: Int
 
 }
 

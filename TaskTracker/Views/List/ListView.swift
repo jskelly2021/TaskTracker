@@ -61,6 +61,7 @@ struct ListView: View {
             newTask.title = ""
             newTask.details = ""
             newTask.deadline = Date()
+            newTask.repetition = TimeScales.single.rawValue
 
             path.append(Destinations.CreateTask(newTask))
         }
