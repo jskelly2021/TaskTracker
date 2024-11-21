@@ -34,23 +34,23 @@ struct EditTask: View {
 
             Spacer()
 
-//            deleteButton()
+            deleteButton()
         }
     }
 
-//    func deleteButton() -> some View {
-//        Button(action: deleteJob) {
-//            Image(systemName: "trash")
-//                .foregroundColor(.red)
-//                .padding(8)
-//            }
-//    }
-//
-//    func deleteJob() {
-//        context.delete(job)
-//        try? context.save()
-//        dismiss()
-//    }
+    func deleteButton() -> some View {
+        Button(action: deleteJob) {
+            Image(systemName: "trash")
+                .foregroundColor(.red)
+                .padding(8)
+            }
+    }
+
+    func deleteJob() {
+        context.delete(job)
+        try? context.save()
+        dismiss()
+    }
 }
 
 #Preview {
