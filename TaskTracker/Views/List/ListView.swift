@@ -58,7 +58,7 @@ struct ListView: View {
             path.append(Destinations.CreateTask(newTask))
         }
         label: {
-            Text("Create New")
+            Image(systemName: "plus.circle")
         }
     }
 }
