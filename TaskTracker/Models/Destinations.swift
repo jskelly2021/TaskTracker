@@ -7,5 +7,5 @@
 
 enum Destinations: Hashable {
     case ViewTask(Job)
-    case CreateTask
+    case CreateTask(Job)
 }

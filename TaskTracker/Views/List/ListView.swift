@@ -30,8 +30,8 @@ struct ListView: View {
                 switch destination {
                 case .ViewTask(let job):
                     TaskHost(job: job)
-                case .CreateTask:
-                    TaskHost(job: newTask(), createNew: true)
+                case .CreateTask(let job):
+                    TaskHost(job: job, createNew: true)
                 }
             }
         }
@@ -47,18 +47,16 @@ struct ListView: View {
 
     private func createNewButton() -> some View {
         Button {
-            path.append(Destinations.CreateTask)
-        } label: {
+            let newTask = Job(context: context)
+            newTask.title = ""
+            newTask.details = ""
+            newTask.deadline = Date()
+
+            path.append(Destinations.CreateTask(newTask))
+        }
+        label: {
             Text("Create New")
         }
-    }
-
-    private func newTask() -> Job {
-        let newTask = Job(context: context)
-        newTask.title = ""
-        newTask.details = ""
-        newTask.deadline = Date()
-        return newTask
     }
 }
 
