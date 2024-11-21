@@ -5,12 +5,14 @@
 //  Created by Jacob Kelly on 11/21/24.
 //
 
-enum TimeScales: Int, CustomStringConvertible {
+enum TimeScales: Int, CaseIterable, Identifiable, CustomStringConvertible {
     case single
     case daily
     case weekly
     case monthly
-    
+
+    var id: Self { self }
+
     var description: String {
         switch self {
         case .single:
