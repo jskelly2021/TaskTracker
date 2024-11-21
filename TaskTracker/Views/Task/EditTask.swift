@@ -26,8 +26,18 @@ struct EditTask: View {
 
             Spacer()
 
-            Text("Time Scale")
-                .font(.headline)
+            HStack {
+                Text("Time Scale")
+                    .font(.headline)
+
+                Picker("Time Scale", selection: $job.timeScale) {
+                    ForEach(TimeScales.allCases) { option in
+                        Text("\(option.description)")
+                            .tag(option.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
 
             DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                 .datePickerStyle(.graphical)
@@ -59,6 +69,7 @@ struct EditTask: View {
     let job = Job(context: context)
     job.title = "Sample Task"
     job.details = "A simple task for testing the preview."
+    job.timeScale = 0
     job.deadline = Date()
 
     return EditTask(job: job)
