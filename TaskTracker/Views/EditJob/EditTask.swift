@@ -11,18 +11,16 @@ struct EditTask: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
 
-    @Binding var jobTitle: String
-    @Binding var jobDetails: String
-    @Binding var jobDeadline: Date
+    @ObservedObject var job: Job
 
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            TextField("Title", text: $jobTitle, axis: .vertical)
+            TextField("Title", text: $job.title.fallback(""), axis: .vertical)
                 .lineLimit(3)
                 .font(.largeTitle)
                 .bold()
 
-            TextField("Details", text: $jobDetails, axis: .vertical)
+            TextField("Details", text: $job.details.fallback(""), axis: .vertical)
                 .lineLimit(5)
                 .font(.headline)
 
@@ -30,9 +28,9 @@ struct EditTask: View {
 
             Text("Deadline")
                 .font(.headline)
-            DatePicker("Deadline", selection: $jobDeadline, displayedComponents: .date)
+            DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                 .datePickerStyle(.graphical)
-                .id(jobDeadline)
+                .id(job.deadline ?? Date())
 
             Spacer()
 

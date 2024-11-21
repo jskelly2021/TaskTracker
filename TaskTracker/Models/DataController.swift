@@ -8,6 +8,7 @@
 import CoreData
 
 class DataController: ObservableObject {
+    static let instance = DataController()
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {

@@ -12,13 +12,13 @@ struct ListView: View {
 
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Job.deadline, ascending: true)])
     var jobs: FetchedResults<Job>
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     HStack {
-                        NavigationLink(destination: TaskHost(createNew: true)) {
+                        NavigationLink(destination: TaskHost(job: newTask(), createNew: true)) {
                             Text("Create New")
                         }
                     }
@@ -32,6 +32,14 @@ struct ListView: View {
                 }
             }
         }
+    }
+
+    private func newTask() -> Job {
+        let newTask = Job(context: context)
+        newTask.title = ""
+        newTask.details = ""
+        newTask.deadline = Date()
+        return newTask
     }
 }
 

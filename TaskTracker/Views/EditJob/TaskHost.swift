@@ -13,17 +13,11 @@ struct TaskHost: View {
     @Environment(\.dismiss) var dismiss
 
     var createNew: Bool
-    var job: Job?
-    @State var jobTitle: String
-    @State var jobDetails: String
-    @State var jobDeadline: Date
+    @ObservedObject var job: Job
 
-    init(job: Job? = nil, createNew: Bool = false) {
+    init(job: Job, createNew: Bool = false) {
         self.createNew = createNew
         self.job = job
-        self.jobTitle = job?.title ?? ""
-        self.jobDetails = job?.details ?? ""
-        self.jobDeadline = job?.deadline ?? Date()
     }
 
     var body: some View {
@@ -43,12 +37,15 @@ struct TaskHost: View {
                 TaskSummary(job: job)
             }
             else {
-                EditTask(jobTitle: $jobTitle, jobDetails: $jobDetails, jobDeadline: $jobDeadline)
+                EditTask(job: job)
             }
         }
         .padding()
         .onAppear {
             if createNew {
+                if job.managedObjectContext == nil {
+                    context.insert(job)
+                }
                 editMode?.wrappedValue = .active
             }
         }
@@ -61,14 +58,8 @@ struct TaskHost: View {
     }
 
     func saveChanges() {
-        let jobToSave = self.job ?? Job(context: context)
-
-        jobToSave.title = jobTitle
-        jobToSave.details = jobDetails
-        jobToSave.deadline = jobDeadline
-
         if context.hasChanges {
-            print("Context has Changes")
+            try? context.save()
         }
     }
 }
