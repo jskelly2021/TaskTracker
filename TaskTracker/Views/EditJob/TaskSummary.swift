@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct TaskSummary: View {
-    var job: Job?
+    var job: Job
     var jobTitle: String
     var jobDetails: String
     var jobDeadline: Date
 
-    init(job: Job? = nil) {
+    init(job: Job) {
         self.job = job
-        jobTitle = job?.title ?? ""
-        jobDetails = job?.details ?? ""
-        jobDeadline = job?.deadline ?? Date()
+        jobTitle = job.title ?? ""
+        jobDetails = job.details ?? ""
+        jobDeadline = job.deadline ?? Date()
     }
     
     var body: some View {
@@ -47,5 +47,12 @@ struct TaskSummary: View {
 }
 
 #Preview {
-    TaskSummary()
+    let context = DataController(inMemory: true).container.viewContext
+    let job = Job(context: context)
+    job.title = "Sample Task"
+    job.details = "A simple task for testing the preview."
+    job.deadline = Date()
+
+    return TaskSummary(job: job)
+        .environment(\.managedObjectContext, context)
 }
