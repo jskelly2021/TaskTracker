@@ -47,6 +47,7 @@ struct ListView: View {
         }
     }
 
+
     private func jobGrid() -> some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
             ForEach(jobs, id: \.self) { job in

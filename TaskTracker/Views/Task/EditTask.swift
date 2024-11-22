@@ -27,10 +27,10 @@ struct EditTask: View {
             Spacer()
 
             HStack {
-                Text("Time Scale")
+                Text("Repeats")
                     .font(.headline)
 
-                Picker("Time Scale", selection: $job.timeScale) {
+                Picker("TimeScale", selection: $job.timeScale) {
                     ForEach(TimeScales.allCases) { option in
                         Text("\(option.description)")
                             .tag(option.rawValue)
@@ -45,22 +45,25 @@ struct EditTask: View {
 
             Spacer()
 
-            deleteButton()
+            HStack {
+                Spacer()
+                deleteButton()
+                Spacer()
+            }
         }
     }
 
     func deleteButton() -> some View {
-        Button(action: deleteJob) {
+        Button {
+            context.delete(job)
+            try? context.save()
+            dismiss()
+        }
+        label: {
             Image(systemName: "trash")
                 .foregroundColor(.red)
                 .padding(8)
             }
-    }
-
-    func deleteJob() {
-        context.delete(job)
-        try? context.save()
-        dismiss()
     }
 }
 
