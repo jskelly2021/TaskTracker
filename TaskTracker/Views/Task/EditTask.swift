@@ -15,11 +15,11 @@ struct EditTask: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
-
             jobDescription()
             Spacer()
             timeScaleSelector()
             deadlinePicker()
+                .id(job.deadline ?? Date())
             Spacer()
 
             HStack {
@@ -61,10 +61,19 @@ struct EditTask: View {
     }
 
     // Date Picker
+    @ViewBuilder
     func deadlinePicker() -> some View {
-        DatePicker("Deadline", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
-            .datePickerStyle(.graphical)
-            .id(job.deadline ?? Date())
+        ZStack {
+            if job.timeScale == TimeScales.single.rawValue {
+                DatePicker("Single", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
+                    .datePickerStyle(.graphical)
+            }
+            else {
+                DatePicker("Daily", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
+                    .datePickerStyle(.compact)
+            }
+        }
+        .animation(.smooth, value: job.timeScale)
     }
 
     // Delete Button
