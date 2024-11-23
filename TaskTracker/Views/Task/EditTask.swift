@@ -41,7 +41,6 @@ struct EditTask: View {
         }
     }
 
-    // Delete Button
     func deleteButton() -> some View {
         Button {
             context.delete(job)

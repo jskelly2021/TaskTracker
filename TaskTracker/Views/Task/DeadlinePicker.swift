@@ -13,7 +13,6 @@ struct DeadlinePicker: View {
     var body: some View {
         timeScaleSelector()
         deadlinePicker()
-        
     }
 
 
@@ -42,19 +41,25 @@ struct DeadlinePicker: View {
                 DatePicker("Daily Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                     .datePickerStyle(.compact)
             }
-            else if job.timeScale == TimeScales.weekly.rawValue {
-                DatePicker("Weekly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
-                    .datePickerStyle(.compact)
-            }
             else if job.timeScale == TimeScales.monthly.rawValue {
                 DatePicker("Monthly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
                     .datePickerStyle(.graphical)
+            }
+            else {
+                HStack {
+                    Spacer()
+                    Text("No Dates Available")
+                        .foregroundColor(.gray)
+                        .padding()
+                    Spacer()
+                }
             }
         }
         .id(job.deadline ?? Date())
         .transition(.slide)
         .animation(.snappy, value: job.timeScale)
     }
+
 }
 
 #Preview {

@@ -5,7 +5,7 @@
 //  Created by Jacob Kelly on 11/21/24.
 //
 
-enum TimeScales: Int, CaseIterable, Identifiable, CustomStringConvertible {
+enum TimeScales: Int16, CaseIterable, Identifiable, CustomStringConvertible {
     case single
     case daily
     case weekly

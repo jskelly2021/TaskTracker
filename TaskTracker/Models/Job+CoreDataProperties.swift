@@ -20,7 +20,7 @@ extension Job {
     @NSManaged public var details: String?
     @NSManaged public var status: Bool
     @NSManaged public var title: String?
-    @NSManaged public var timeScale: Int
+    @NSManaged public var timeScale: Int16
 
 }
 
