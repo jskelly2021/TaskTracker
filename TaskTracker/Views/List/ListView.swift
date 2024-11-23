@@ -47,6 +47,7 @@ struct ListView: View {
         }
     }
 
+
     private func jobGrid() -> some View {
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
             ForEach(jobs, id: \.self) { job in
@@ -61,6 +62,7 @@ struct ListView: View {
             newTask.title = ""
             newTask.details = ""
             newTask.deadline = Date()
+            newTask.timeScale = TimeScales.single.rawValue
 
             path.append(Destinations.CreateTask(newTask))
         }

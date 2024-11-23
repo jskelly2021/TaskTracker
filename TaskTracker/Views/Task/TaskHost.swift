@@ -69,6 +69,7 @@ struct TaskHost: View {
     let job = Job(context: context)
     job.title = "Sample Task"
     job.details = "A simple task for testing the preview."
+    job.timeScale = 0
     job.deadline = Date()
 
     return TaskHost(job: job)

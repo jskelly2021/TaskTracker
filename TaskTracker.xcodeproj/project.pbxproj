@@ -19,8 +19,9 @@
 		5362185A2CE8086A0038E76D /* FallBackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536218592CE8085F0038E76D /* FallBackExtension.swift */; };
 		536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C538D2C8E464D00A7E4CD /* DataController.swift */; };
 		536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */; };
-		536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */; };
-		536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */; };
+		53706CF62CEFDB7900455019 /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53706CF42CEFDB7900455019 /* Job+CoreDataClass.swift */; };
+		53706CF72CEFDB7900455019 /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53706CF52CEFDB7900455019 /* Job+CoreDataProperties.swift */; };
+		53706CF92CEFDC7000455019 /* TimeScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53706CF82CEFDC5200455019 /* TimeScales.swift */; };
 		538C58272C928B3800454417 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C58262C928B3800454417 /* EditTask.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +39,9 @@
 		536218592CE8085F0038E76D /* FallBackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBackExtension.swift; sourceTree = "<group>"; };
 		536C538D2C8E464D00A7E4CD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobDatabase.xcdatamodel; sourceTree = "<group>"; };
-		536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		53706CF42CEFDB7900455019 /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53706CF52CEFDB7900455019 /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53706CF82CEFDC5200455019 /* TimeScales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScales.swift; sourceTree = "<group>"; };
 		538C58262C928B3800454417 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,10 +132,11 @@
 		53C5A2D42C0664BE0068DE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53706CF82CEFDC5200455019 /* TimeScales.swift */,
+				53706CF42CEFDB7900455019 /* Job+CoreDataClass.swift */,
+				53706CF52CEFDB7900455019 /* Job+CoreDataProperties.swift */,
 				535F84B22CEFB72800D363B8 /* Destinations.swift */,
 				536218592CE8085F0038E76D /* FallBackExtension.swift */,
-				536C53922C8E47DF00A7E4CD /* Job+CoreDataClass.swift */,
-				536C53932C8E47DF00A7E4CD /* Job+CoreDataProperties.swift */,
 				536C538D2C8E464D00A7E4CD /* DataController.swift */,
 				536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */,
 			);
@@ -211,14 +214,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				538C58272C928B3800454417 /* EditTask.swift in Sources */,
-				536C53942C8E47DF00A7E4CD /* Job+CoreDataClass.swift in Sources */,
+				53706CF62CEFDB7900455019 /* Job+CoreDataClass.swift in Sources */,
+				53706CF72CEFDB7900455019 /* Job+CoreDataProperties.swift in Sources */,
 				535F84B32CEFB72E00D363B8 /* Destinations.swift in Sources */,
-				536C53952C8E47DF00A7E4CD /* Job+CoreDataProperties.swift in Sources */,
 				53260A382C06481200F041AE /* ListItem.swift in Sources */,
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				536218562CE642200038E76D /* TaskHost.swift in Sources */,
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */,
+				53706CF92CEFDC7000455019 /* TimeScales.swift in Sources */,
 				536218582CE643980038E76D /* TaskSummary.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
