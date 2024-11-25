@@ -59,8 +59,19 @@ struct DeadlinePicker: View {
         .animation(.snappy, value: job.timeScale)
     }
 
+    let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
+    @ViewBuilder
     func dayPicker() -> some View {
-        Text("Select Days")
+        VStack {
+            Text("Select Days")
+
+            HStack {
+                ForEach(weekdays, id: \.self) { day in
+                    Text(day)
+                }
+                .padding()
+            }
+        }
     }
 
 }
