@@ -38,8 +38,7 @@ struct DeadlinePicker: View {
                     .datePickerStyle(.graphical)
             }
             else if job.timeScale == TimeScales.daily.rawValue {
-                DatePicker("Daily Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
-                    .datePickerStyle(.compact)
+                dayPicker()
             }
             else if job.timeScale == TimeScales.monthly.rawValue {
                 DatePicker("Monthly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
@@ -58,6 +57,10 @@ struct DeadlinePicker: View {
         .id(job.deadline ?? Date())
         .transition(.slide)
         .animation(.snappy, value: job.timeScale)
+    }
+
+    func dayPicker() -> some View {
+        Text("Select Days")
     }
 
 }
