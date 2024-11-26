@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeadlinePicker: View {
     @ObservedObject var job: Job
+    @State var days:Set<Days> = [Days.Monday, Days.Wednesday, Days.Friday, Days.Saturday]
 
     var body: some View {
         timeScaleSelector()
@@ -40,7 +41,7 @@ struct DeadlinePicker: View {
                     .datePickerStyle(.graphical)
             }
             else if job.timeScale == TimeScales.daily.rawValue {
-//                DailyPicker()
+                DailyPicker(selectedDays: $days)
             }
             else if job.timeScale == TimeScales.monthly.rawValue {
                 DatePicker("Monthly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
