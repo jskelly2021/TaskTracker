@@ -40,7 +40,7 @@ struct DeadlinePicker: View {
                     .datePickerStyle(.graphical)
             }
             else if job.timeScale == TimeScales.daily.rawValue {
-                DailyPicker()
+//                DailyPicker()
             }
             else if job.timeScale == TimeScales.monthly.rawValue {
                 DatePicker("Monthly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)

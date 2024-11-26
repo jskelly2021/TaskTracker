@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DailyPicker: View {
+    @Binding var selectedDays: Array<Days>
+
     var body: some View {
         VStack {
             Text("Select Days")
@@ -30,8 +32,7 @@ struct DailyPicker: View {
         label: {
             ZStack {
                 Circle()
-                    .fill(Color.blue)
-
+                    .fill(selectedDays.contains(day) ? Color.blue : Color.gray)
                 Text(day.abbrieviate)
                     .foregroundColor(.white)
                     .padding()
@@ -41,5 +42,6 @@ struct DailyPicker: View {
 }
 
 #Preview {
-    DailyPicker()
+    let days = [Days.Monday, Days.Wednesday, Days.Friday, Days.Saturday]
+    DailyPicker(selectedDays: .constant(days))
 }
