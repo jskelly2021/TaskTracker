@@ -11,7 +11,8 @@ struct DailyPicker: View {
     var body: some View {
         VStack {
             Text("Select Days")
-            
+                .font(.title)
+
             HStack {
                 Spacer()
                 ForEach(Days.allCases, id: \.self) { day in
@@ -21,16 +22,15 @@ struct DailyPicker: View {
             }
         }
     }
-    
+
     func dayItem(day: Days) -> some View {
         Button {
-            print("Clicked")
+            print("Selected \(day.description)")
         }
         label: {
             ZStack {
                 Circle()
                     .fill(Color.blue)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 Text(day.abbrieviate)
                     .foregroundColor(.white)

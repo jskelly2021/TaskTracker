@@ -17,7 +17,6 @@ struct EditTask: View {
         VStack(alignment: .leading, spacing: 10.0) {
             jobDescription()
             DeadlinePicker(job: job)
-            Spacer()
 
             HStack {
                 Spacer()

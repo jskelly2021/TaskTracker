@@ -12,7 +12,9 @@ struct DeadlinePicker: View {
 
     var body: some View {
         timeScaleSelector()
+        Spacer()
         deadlinePicker()
+        Spacer()
     }
 
 
