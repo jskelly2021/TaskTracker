@@ -5,7 +5,7 @@
 //  Created by Jacob Kelly on 11/26/24.
 //
 
-enum Days: CaseIterable, Identifiable, CustomStringConvertible{
+enum Days: String, CaseIterable, Identifiable, CustomStringConvertible{
     case Sunday
     case Monday
     case Tuesday
@@ -17,6 +17,25 @@ enum Days: CaseIterable, Identifiable, CustomStringConvertible{
     var id: Self { self }
 
     var description: String {
+        switch self {
+        case .Sunday:
+            return "Sunday"
+        case .Monday:
+            return "Monday"
+        case .Tuesday:
+            return "Tuesday"
+        case .Wednesday:
+            return "Wednesday"
+        case .Thursday:
+            return "Thursday"
+        case .Friday:
+            return "Friday"
+        case .Saturday:
+            return "Saturday"
+        }
+    }
+
+    var abbrieviate: String {
         switch self {
         case .Sunday:
             return "S"

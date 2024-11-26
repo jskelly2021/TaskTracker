@@ -11,12 +11,30 @@ struct DailyPicker: View {
     var body: some View {
         VStack {
             Text("Select Days")
-
+            
             HStack {
+                Spacer()
                 ForEach(Days.allCases, id: \.self) { day in
-                    Text(day.description)
+                    dayItem(day: day)
                 }
-                .padding()
+                Spacer()
+            }
+        }
+    }
+    
+    func dayItem(day: Days) -> some View {
+        Button {
+            print("Clicked")
+        }
+        label: {
+            ZStack {
+                Circle()
+                    .fill(Color.blue)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                Text(day.abbrieviate)
+                    .foregroundColor(.white)
+                    .padding()
             }
         }
     }
