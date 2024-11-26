@@ -27,6 +27,7 @@
 		53706CF92CEFDC7000455019 /* TimeScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53706CF82CEFDC5200455019 /* TimeScales.swift */; };
 		538C58272C928B3800454417 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C58262C928B3800454417 /* EditTask.swift */; };
 		53C3680A2CF63E5E003C237D /* DailyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C368092CF63E5E003C237D /* DailyPicker.swift */; };
+		53C3680D2CF6413B003C237D /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C3680C2CF64128003C237D /* Days.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		53706CF82CEFDC5200455019 /* TimeScales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScales.swift; sourceTree = "<group>"; };
 		538C58262C928B3800454417 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
 		53C368092CF63E5E003C237D /* DailyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicker.swift; sourceTree = "<group>"; };
+		53C3680C2CF64128003C237D /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				53C3680B2CF6407B003C237D /* CoreData */,
+				53C3680C2CF64128003C237D /* Days.swift */,
 				53706CF82CEFDC5200455019 /* TimeScales.swift */,
 				535F84B22CEFB72800D363B8 /* Destinations.swift */,
 				536218592CE8085F0038E76D /* FallBackExtension.swift */,
@@ -257,6 +260,7 @@
 				53385F852CF3F80A00106729 /* Job+CoreDataProperties.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				53C3680A2CF63E5E003C237D /* DailyPicker.swift in Sources */,
+				53C3680D2CF6413B003C237D /* Days.swift in Sources */,
 				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
 				5362185A2CE8086A0038E76D /* FallBackExtension.swift in Sources */,
 			);

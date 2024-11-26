@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct DailyPicker: View {
-    let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
-
     var body: some View {
         VStack {
             Text("Select Days")
 
             HStack {
-                ForEach(weekdays, id: \.self) { day in
-                    Text(day)
+                ForEach(Days.allCases, id: \.self) { day in
+                    Text(day.description)
                 }
                 .padding()
             }
