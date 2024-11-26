@@ -14,12 +14,10 @@
 		53260A382C06481200F041AE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A372C06481200F041AE /* ListItem.swift */; };
 		53260A3A2C064F4500F041AE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53260A392C064F4500F041AE /* ListView.swift */; };
 		53385F7D2CF26E0900106729 /* DeadlinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53385F7C2CF26E0900106729 /* DeadlinePicker.swift */; };
-		53385F882CF3FB6B00106729 /* Deadline+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53385F862CF3FB6B00106729 /* Deadline+CoreDataClass.swift */; };
-		53385F892CF3FB6B00106729 /* Deadline+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53385F872CF3FB6B00106729 /* Deadline+CoreDataProperties.swift */; };
-		534707862CF6655100DA54A0 /* Day+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534707822CF6655100DA54A0 /* Day+CoreDataClass.swift */; };
-		534707872CF6655100DA54A0 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534707832CF6655100DA54A0 /* Day+CoreDataProperties.swift */; };
-		534707882CF6655100DA54A0 /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534707842CF6655100DA54A0 /* Job+CoreDataClass.swift */; };
-		534707892CF6655100DA54A0 /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534707852CF6655100DA54A0 /* Job+CoreDataProperties.swift */; };
+		5347078E2CF66CCC00DA54A0 /* Deadline+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347078A2CF66CCC00DA54A0 /* Deadline+CoreDataClass.swift */; };
+		5347078F2CF66CCC00DA54A0 /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347078C2CF66CCC00DA54A0 /* Job+CoreDataClass.swift */; };
+		534707902CF66CCC00DA54A0 /* Deadline+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347078B2CF66CCC00DA54A0 /* Deadline+CoreDataProperties.swift */; };
+		534707912CF66CCC00DA54A0 /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347078D2CF66CCC00DA54A0 /* Job+CoreDataProperties.swift */; };
 		535F84B32CEFB72E00D363B8 /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F84B22CEFB72800D363B8 /* Destinations.swift */; };
 		536218562CE642200038E76D /* TaskHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536218552CE642120038E76D /* TaskHost.swift */; };
 		536218582CE643980038E76D /* TaskSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536218572CE6438F0038E76D /* TaskSummary.swift */; };
@@ -41,12 +39,10 @@
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		53385F7C2CF26E0900106729 /* DeadlinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinePicker.swift; sourceTree = "<group>"; };
-		53385F862CF3FB6B00106729 /* Deadline+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		53385F872CF3FB6B00106729 /* Deadline+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		534707822CF6655100DA54A0 /* Day+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		534707832CF6655100DA54A0 /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		534707842CF6655100DA54A0 /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		534707852CF6655100DA54A0 /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5347078A2CF66CCC00DA54A0 /* Deadline+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5347078B2CF66CCC00DA54A0 /* Deadline+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5347078C2CF66CCC00DA54A0 /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5347078D2CF66CCC00DA54A0 /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		535F84B22CEFB72800D363B8 /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
 		536218552CE642120038E76D /* TaskHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHost.swift; sourceTree = "<group>"; };
 		536218572CE6438F0038E76D /* TaskSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummary.swift; sourceTree = "<group>"; };
@@ -156,12 +152,10 @@
 		53C3680B2CF6407B003C237D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				534707822CF6655100DA54A0 /* Day+CoreDataClass.swift */,
-				534707832CF6655100DA54A0 /* Day+CoreDataProperties.swift */,
-				534707842CF6655100DA54A0 /* Job+CoreDataClass.swift */,
-				534707852CF6655100DA54A0 /* Job+CoreDataProperties.swift */,
-				53385F862CF3FB6B00106729 /* Deadline+CoreDataClass.swift */,
-				53385F872CF3FB6B00106729 /* Deadline+CoreDataProperties.swift */,
+				5347078A2CF66CCC00DA54A0 /* Deadline+CoreDataClass.swift */,
+				5347078B2CF66CCC00DA54A0 /* Deadline+CoreDataProperties.swift */,
+				5347078C2CF66CCC00DA54A0 /* Job+CoreDataClass.swift */,
+				5347078D2CF66CCC00DA54A0 /* Job+CoreDataProperties.swift */,
 				536C538D2C8E464D00A7E4CD /* DataController.swift */,
 				536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */,
 			);
@@ -256,18 +250,16 @@
 				53260A3A2C064F4500F041AE /* ListView.swift in Sources */,
 				536218562CE642200038E76D /* TaskHost.swift in Sources */,
 				53385F7D2CF26E0900106729 /* DeadlinePicker.swift in Sources */,
+				5347078E2CF66CCC00DA54A0 /* Deadline+CoreDataClass.swift in Sources */,
+				5347078F2CF66CCC00DA54A0 /* Job+CoreDataClass.swift in Sources */,
+				534707902CF66CCC00DA54A0 /* Deadline+CoreDataProperties.swift in Sources */,
+				534707912CF66CCC00DA54A0 /* Job+CoreDataProperties.swift in Sources */,
 				531759472BF3F8C400BED682 /* ContentView.swift in Sources */,
 				536C538E2C8E464D00A7E4CD /* DataController.swift in Sources */,
-				53385F882CF3FB6B00106729 /* Deadline+CoreDataClass.swift in Sources */,
-				53385F892CF3FB6B00106729 /* Deadline+CoreDataProperties.swift in Sources */,
 				53706CF92CEFDC7000455019 /* TimeScales.swift in Sources */,
 				536218582CE643980038E76D /* TaskSummary.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
 				53C3680A2CF63E5E003C237D /* DailyPicker.swift in Sources */,
-				534707862CF6655100DA54A0 /* Day+CoreDataClass.swift in Sources */,
-				534707872CF6655100DA54A0 /* Day+CoreDataProperties.swift in Sources */,
-				534707882CF6655100DA54A0 /* Job+CoreDataClass.swift in Sources */,
-				534707892CF6655100DA54A0 /* Job+CoreDataProperties.swift in Sources */,
 				53C3680D2CF6413B003C237D /* Days.swift in Sources */,
 				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
 				5362185A2CE8086A0038E76D /* FallBackExtension.swift in Sources */,

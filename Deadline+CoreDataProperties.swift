@@ -2,7 +2,7 @@
 //  Deadline+CoreDataProperties.swift
 //  TaskTracker
 //
-//  Created by Jacob Kelly on 11/24/24.
+//  Created by Jacob Kelly on 11/26/24.
 //
 //
 
