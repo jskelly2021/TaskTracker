@@ -26,6 +26,7 @@
 		536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */; };
 		53706CF92CEFDC7000455019 /* TimeScales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53706CF82CEFDC5200455019 /* TimeScales.swift */; };
 		538C58272C928B3800454417 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538C58262C928B3800454417 /* EditTask.swift */; };
+		53C3680A2CF63E5E003C237D /* DailyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C368092CF63E5E003C237D /* DailyPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,18 +38,19 @@
 		53260A372C06481200F041AE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		53260A392C064F4500F041AE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		53385F7C2CF26E0900106729 /* DeadlinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadlinePicker.swift; sourceTree = "<group>"; };
-		53385F802CF3F80A00106729 /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53385F812CF3F80A00106729 /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		53385F802CF3F80A00106729 /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataClass.swift"; path = "../Job+CoreDataClass.swift"; sourceTree = "<group>"; };
+		53385F812CF3F80A00106729 /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataProperties.swift"; path = "../Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		53385F862CF3FB6B00106729 /* Deadline+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		53385F872CF3FB6B00106729 /* Deadline+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deadline+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		535F84B22CEFB72800D363B8 /* Destinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destinations.swift; sourceTree = "<group>"; };
 		536218552CE642120038E76D /* TaskHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHost.swift; sourceTree = "<group>"; };
 		536218572CE6438F0038E76D /* TaskSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSummary.swift; sourceTree = "<group>"; };
 		536218592CE8085F0038E76D /* FallBackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBackExtension.swift; sourceTree = "<group>"; };
-		536C538D2C8E464D00A7E4CD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		536C538D2C8E464D00A7E4CD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = ../DataController.swift; sourceTree = "<group>"; };
 		536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobDatabase.xcdatamodel; sourceTree = "<group>"; };
 		53706CF82CEFDC5200455019 /* TimeScales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScales.swift; sourceTree = "<group>"; };
 		538C58262C928B3800454417 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
+		53C368092CF63E5E003C237D /* DailyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,23 +133,40 @@
 				536218572CE6438F0038E76D /* TaskSummary.swift */,
 				536218552CE642120038E76D /* TaskHost.swift */,
 				538C58262C928B3800454417 /* EditTask.swift */,
-				53385F7C2CF26E0900106729 /* DeadlinePicker.swift */,
+				53C368082CF63E0C003C237D /* DeadlinePicker */,
 			);
 			path = Task;
 			sourceTree = "<group>";
 		};
-		53C5A2D42C0664BE0068DE68 /* Models */ = {
+		53C368082CF63E0C003C237D /* DeadlinePicker */ = {
+			isa = PBXGroup;
+			children = (
+				53385F7C2CF26E0900106729 /* DeadlinePicker.swift */,
+				53C368092CF63E5E003C237D /* DailyPicker.swift */,
+			);
+			path = DeadlinePicker;
+			sourceTree = "<group>";
+		};
+		53C3680B2CF6407B003C237D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				53385F862CF3FB6B00106729 /* Deadline+CoreDataClass.swift */,
 				53385F872CF3FB6B00106729 /* Deadline+CoreDataProperties.swift */,
 				53385F802CF3F80A00106729 /* Job+CoreDataClass.swift */,
 				53385F812CF3F80A00106729 /* Job+CoreDataProperties.swift */,
+				536C538D2C8E464D00A7E4CD /* DataController.swift */,
+				536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		53C5A2D42C0664BE0068DE68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53C3680B2CF6407B003C237D /* CoreData */,
 				53706CF82CEFDC5200455019 /* TimeScales.swift */,
 				535F84B22CEFB72800D363B8 /* Destinations.swift */,
 				536218592CE8085F0038E76D /* FallBackExtension.swift */,
-				536C538D2C8E464D00A7E4CD /* DataController.swift */,
-				536C538F2C8E474400A7E4CD /* JobDatabase.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,6 +256,7 @@
 				53385F842CF3F80A00106729 /* Job+CoreDataClass.swift in Sources */,
 				53385F852CF3F80A00106729 /* Job+CoreDataProperties.swift in Sources */,
 				531759452BF3F8C400BED682 /* TaskTrackerApp.swift in Sources */,
+				53C3680A2CF63E5E003C237D /* DailyPicker.swift in Sources */,
 				536C53912C8E474400A7E4CD /* JobDatabase.xcdatamodeld in Sources */,
 				5362185A2CE8086A0038E76D /* FallBackExtension.swift in Sources */,
 			);
@@ -453,7 +473,7 @@
 			);
 			currentVersion = 536C53902C8E474400A7E4CD /* JobDatabase.xcdatamodel */;
 			name = JobDatabase.xcdatamodeld;
-			path = /Users/jacobkelly/Documents/XCodeProjects/TaskTracker/TaskTracker/Models/JobDatabase.xcdatamodeld;
+			path = ../JobDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

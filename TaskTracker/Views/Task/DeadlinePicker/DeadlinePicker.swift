@@ -38,7 +38,7 @@ struct DeadlinePicker: View {
                     .datePickerStyle(.graphical)
             }
             else if job.timeScale == TimeScales.daily.rawValue {
-                dayPicker()
+                DailyPicker()
             }
             else if job.timeScale == TimeScales.monthly.rawValue {
                 DatePicker("Monthly Start Date", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
@@ -58,22 +58,6 @@ struct DeadlinePicker: View {
         .transition(.slide)
         .animation(.snappy, value: job.timeScale)
     }
-
-    let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
-    @ViewBuilder
-    func dayPicker() -> some View {
-        VStack {
-            Text("Select Days")
-
-            HStack {
-                ForEach(weekdays, id: \.self) { day in
-                    Text(day)
-                }
-                .padding()
-            }
-        }
-    }
-
 }
 
 #Preview {
