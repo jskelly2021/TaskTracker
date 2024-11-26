@@ -2,7 +2,7 @@
 //  Job+CoreDataProperties.swift
 //  TaskTracker
 //
-//  Created by Jacob Kelly on 11/24/24.
+//  Created by Jacob Kelly on 11/26/24.
 //
 //
 
@@ -21,7 +21,25 @@ extension Job {
     @NSManaged public var status: Bool
     @NSManaged public var timeScale: Int16
     @NSManaged public var title: String?
+    @NSManaged public var days: NSSet?
     @NSManaged public var deadlines: NSSet?
+
+}
+
+// MARK: Generated accessors for days
+extension Job {
+
+    @objc(addDaysObject:)
+    @NSManaged public func addToDays(_ value: Day)
+
+    @objc(removeDaysObject:)
+    @NSManaged public func removeFromDays(_ value: Day)
+
+    @objc(addDays:)
+    @NSManaged public func addToDays(_ values: NSSet)
+
+    @objc(removeDays:)
+    @NSManaged public func removeFromDays(_ values: NSSet)
 
 }
 
