@@ -16,11 +16,7 @@ struct EditTask: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
             jobDescription()
-            Spacer()
-            timeScaleSelector()
-            deadlinePicker()
-                .id(job.deadline ?? Date())
-            Spacer()
+            DeadlinePicker(job: job)
 
             HStack {
                 Spacer()
@@ -39,44 +35,11 @@ struct EditTask: View {
                 .bold()
 
             TextField("Details", text: $job.details.fallback(""), axis: .vertical)
-                .lineLimit(5)
+                .lineLimit(5, reservesSpace: true)
                 .font(.headline)
         }
     }
 
-    // Time Scale Picker
-    func timeScaleSelector() -> some View {
-        HStack {
-            Text("Repeats")
-                .font(.headline)
-
-            Picker("TimeScale", selection: $job.timeScale) {
-                ForEach(TimeScales.allCases) { option in
-                    Text("\(option.description)")
-                        .tag(option.rawValue)
-                }
-            }
-            .pickerStyle(.segmented)
-        }
-    }
-
-    // Date Picker
-    @ViewBuilder
-    func deadlinePicker() -> some View {
-        ZStack {
-            if job.timeScale == TimeScales.single.rawValue {
-                DatePicker("Single", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
-                    .datePickerStyle(.graphical)
-            }
-            else {
-                DatePicker("Daily", selection: $job.deadline.fallback(Date()), displayedComponents: .date)
-                    .datePickerStyle(.compact)
-            }
-        }
-        .animation(.smooth, value: job.timeScale)
-    }
-
-    // Delete Button
     func deleteButton() -> some View {
         Button {
             context.delete(job)
